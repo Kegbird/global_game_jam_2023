@@ -1,0 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Item : MonoBehaviour
+{
+    [SerializeField]
+    private string _name;
+    [SerializeField]
+    private float _weight;
+
+
+}
