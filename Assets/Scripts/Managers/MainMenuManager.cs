@@ -20,7 +20,7 @@ namespace Managers
             IEnumerator ShowBlackScreenAndPlay()
             {
                 yield return StartCoroutine(ShowBlackScreen());
-                SceneManager.LoadScene(Constants.GAME_SCENE_INDEX);
+                SceneManager.LoadScene(Constants.INTRO_SCENE_INDEX);
             }
             StartCoroutine(ShowBlackScreenAndPlay());
         }
