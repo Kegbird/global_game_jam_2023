@@ -50,6 +50,8 @@ public class IntroSceneManager : MonoBehaviour
 
         if(_no_image_intro)
         {
+            _image.color = new Color(0, 0, 0, 1f);
+            yield return StartCoroutine(HideBlackScreen());
             for (int i = 0; i < _sentences.Count; i++)
             {
                 sentence = _sentences[i];
@@ -121,6 +123,7 @@ public class IntroSceneManager : MonoBehaviour
             yield return new WaitForSeconds(step);
         }
     }
+    
     private IEnumerator DecreaseVolume()
     {
         float step = 0.1f;

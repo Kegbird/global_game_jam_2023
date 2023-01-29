@@ -404,7 +404,7 @@ MonoBehaviour:
   _images:
   - {fileID: 21300000, guid: 934c12e77f07a5c4fb0e60c34f3fcfe4, type: 3}
   _sentences_per_image: 01000000
-  _no_image_intro: 0
+  _no_image_intro: 1
   _letters_per_second: 6
   _audio_source: {fileID: 0}
 --- !u!4 &875470797
