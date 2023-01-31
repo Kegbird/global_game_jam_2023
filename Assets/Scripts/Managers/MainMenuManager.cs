@@ -9,12 +9,36 @@ namespace Managers
     public class MainMenuManager : MonoBehaviour
     {
         public Image _black_screen;
+        public Canvas _commands_canvas;//andrea
+        public Canvas _credits_canvas;//
+        public Canvas _canvas; //
+        private string _showed_canvas; //
 
         private void Start()
         {
             StartCoroutine(HideBlackScreen());
+            _commands_canvas.gameObject.SetActive(false); //
+            _credits_canvas.gameObject.SetActive(false); //
         }
 
+        public void CommandsButtonClick() //
+        {
+            _canvas.gameObject.SetActive(false);
+            _commands_canvas.gameObject.SetActive(true);
+        }
+
+        public void CreditsButtonClick() //
+        {
+            _canvas.gameObject.SetActive(false);
+            _credits_canvas.gameObject.SetActive(true);
+        }
+
+        public void BackButtonClick() //
+        {
+            _canvas.gameObject.SetActive(true);
+            _commands_canvas.gameObject.SetActive(false);
+            _credits_canvas.gameObject.SetActive(false);
+        }
         public void PlayButtonClick()
         {
             IEnumerator ShowBlackScreenAndPlay()
