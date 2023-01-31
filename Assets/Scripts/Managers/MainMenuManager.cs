@@ -9,7 +9,6 @@ namespace Managers
     public class MainMenuManager : MonoBehaviour
     {
         public Image _black_screen;
-        //asd
 
         private void Start()
         {
