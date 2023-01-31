@@ -6,6 +6,10 @@ TagManager:
   tags:
   - UI
   - Logic
+  - Readable
+  - Pickup
+  - DialogueManager
+  - Inventory
   layers:
   - Default
   - TransparentFX
@@ -14,8 +18,8 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
+  - Readable
+  - Pickup
   - 
   - 
   - 

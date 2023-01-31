@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
+using Utility;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,10 +18,14 @@ public class PlayerController : MonoBehaviour
     private float _weight;
     [SerializeField]
     private bool _bunker;
-
+    [SerializeField]
+    private GameObject _near_object;
+    [SerializeField]
+    private Animator _animator;
 
     private void Awake()
     {
+        _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -30,32 +36,93 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(!_active)
+        if (!_active)
+        {
+            ResetAnimator();
             return;
+        }
+
         _movement_vector.x = Input.GetAxisRaw("Horizontal");
         _movement_vector.y = Input.GetAxisRaw("Vertical");
+        SetAnimatorParams();
+        if (_near_object != null)
+            HandleNearObject();
     }
 
     private void FixedUpdate()
     {
         if (!_active)
             return;
-        Debug.Log(_movement_vector);
-        _rigidbody.MovePosition(transform.position + (_movement_vector * _movement_speed * Time.fixedDeltaTime));
+        _rigidbody.velocity = _movement_vector * _movement_speed;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void SetAnimatorParams()
     {
-        
+        if (_movement_vector.x > 0)
+        {
+            _animator.SetBool("right", true);
+            _animator.SetBool("left", false);
+        }
+        if (_movement_vector.x < 0)
+        {
+            _animator.SetBool("left", true);
+            _animator.SetBool("right", false);
+        }
+        if(_movement_vector.y > 0)
+        {
+            _animator.SetBool("up", true);
+            _animator.SetBool("down", true);
+        }
+        if(_movement_vector.y < 0)
+        {
+            _animator.SetBool("down", true);
+            _animator.SetBool("up", false);
+        }
+        if(_movement_vector.x == 0 && _movement_vector.y == 0)
+        {
+            ResetAnimator();
+        }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void ResetAnimator()
     {
-        
+        _animator.SetBool("left", false);
+        _animator.SetBool("right", false);
+        _animator.SetBool("down", false);
+        _animator.SetBool("up", false);
+    }
+
+    private void HandleNearObject()
+    {
+        if(_near_object.tag.Equals(Tags.PICKUP_TAG) && Input.GetKeyDown(KeyCode.F))
+        {
+            DisableMovement();
+            _near_object.GetComponent<Pickup>().Interact();
+        }   
+        else if(_near_object.tag.Equals(Tags.READABLE_TAG) && Input.GetKeyDown(KeyCode.F))
+        {
+            DisableMovement();
+            _near_object.GetComponent<Readable>().Interact();
+        }
+    }
+
+    public void DisableMovement()
+    {
+        _active = false;
+    }
+
+    public void EnableMovement()
+    {
+        _active = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _near_object = collision.gameObject;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        
+        _near_object = null;
     }
 }
