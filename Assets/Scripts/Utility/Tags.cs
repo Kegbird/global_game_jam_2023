@@ -13,5 +13,7 @@ namespace Utility
         public static string READABLE_TAG = "Readable";
         public static string PICKUP_TAG = "Pickup";
         public static string INVENTORY_TAG = "Inventory";
+        public static string LOGIC_TAG = "Logic";
+        public static string DOOR_TAG = "Door";
     }
 }

@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     private GameObject _near_object;
     [SerializeField]
     private Animator _animator;
+    [SerializeField]
+    private AnimatorController _bunker_animator_controller;
+    [SerializeField]
+    private AnimatorController _outside_animator_controller;
 
     private void Awake()
     {
@@ -104,6 +108,28 @@ public class PlayerController : MonoBehaviour
             DisableMovement();
             _near_object.GetComponent<Readable>().Interact();
         }
+        else if (_near_object.tag.Equals(Tags.DOOR_TAG) && Input.GetKeyDown(KeyCode.F))
+        {
+            DisableMovement();
+            _near_object.GetComponent<Door>().Interact();
+        }
+    }
+
+    public void SetBunkerAnimatorController()
+    {
+        _animator.runtimeAnimatorController = _bunker_animator_controller;
+    }
+
+    public void SetOutsideAnimatorController()
+    {
+        _animator.runtimeAnimatorController = _outside_animator_controller;
+    }
+
+    public void Die()
+    {
+        DisableMovement();
+        ResetAnimator();
+        _animator.SetBool("dead", true);
     }
 
     public void DisableMovement()

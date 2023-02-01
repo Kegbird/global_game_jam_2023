@@ -1,3 +1,4 @@
+using Managers;
 using ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,12 +24,13 @@ public class Pickup : MonoBehaviour
     {
         IEnumerator InteractCoroutine()
         {
+            CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
             DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
             yield return StartCoroutine(_dialogue_manager.ReadDialogue(_dialogue));
             PlayerInventory _inventory = GameObject.FindWithTag(Tags.PLAYER_TAG).GetComponent<PlayerInventory>();
             _inventory.AddPickup(_pickup);
+            _counters_manager.IncreaseDecrementStep(_pickup._weight);
             this.gameObject.SetActive(false);
-            Destroy(this);
         }
         StartCoroutine(InteractCoroutine());
     }
