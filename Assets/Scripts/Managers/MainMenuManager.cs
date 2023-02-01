@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,10 +10,16 @@ namespace Managers
     public class MainMenuManager : MonoBehaviour
     {
         public Image _black_screen;
-        public Text _game_title;
-        public Text _commands_title;
-        public Text _credits_title;
+        public TextMeshProUGUI _game_title;
+        public TextMeshProUGUI _commands_text;
+        public TextMeshProUGUI _credits_text;
+        public TextMeshProUGUI _authors_text;
+        public Image _commands_image;
+        public Button _play_button;
         public Button _back_button;
+        public Button _credits_button;
+        public Button _commands_button;
+        public Button _exit_button;
 
         private void Start()
         {
@@ -21,50 +28,46 @@ namespace Managers
 
         public void CommandsButtonClick()
         {
-            GameObject[] _main_buttons = GameObject.FindGameObjectsWithTag("MainButton");
-            //Debug.Log(_main_buttons.Length);
-            foreach (GameObject _item in _main_buttons)
-            {
-                _item.SetActive(false);
-            }
-
             _game_title.gameObject.SetActive(false);
-            _commands_title.gameObject.SetActive(true);
+            _credits_button.gameObject.SetActive(false);
+            _commands_button.gameObject.SetActive(false);
+            _exit_button.gameObject.SetActive(false);
+            _game_title.gameObject.SetActive(false);
+            _play_button.gameObject.SetActive(false);
+
+            _commands_text.gameObject.SetActive(true);
+            _commands_image.gameObject.SetActive(true);
             _back_button.gameObject.SetActive(true);
-
-
         }
 
         public void CreditsButtonClick()
         {
-            GameObject[] _main_buttons = GameObject.FindGameObjectsWithTag("MainButton");
-            //Debug.Log(_main_buttons.Length);
-            foreach (GameObject _item in _main_buttons)
-            {
-                _item.SetActive(false);
-            }
-
             _game_title.gameObject.SetActive(false);
-            _credits_title.gameObject.SetActive(true);
+            _credits_button.gameObject.SetActive(false);
+            _commands_button.gameObject.SetActive(false);
+            _exit_button.gameObject.SetActive(false);
+            _game_title.gameObject.SetActive(false);
+            _play_button.gameObject.SetActive(false);
+
+            _authors_text.gameObject.SetActive(true);
+            _credits_text.gameObject.SetActive(true);
             _back_button.gameObject.SetActive(true);
         }
 
         public void BackButtonClick()
         {
-            _game_title.gameObject.SetActive(true);
-            _commands_title.gameObject.SetActive(false);
-            _credits_title.gameObject.SetActive(false);
+            _commands_text.gameObject.SetActive(false);
+            _commands_image.gameObject.SetActive(false);
+            _authors_text.gameObject.SetActive(false);
+            _credits_text.gameObject.SetActive(false);
             _back_button.gameObject.SetActive(false);
 
-
-            GameObject[] _main_buttons = GameObject.FindGameObjectsWithTag("MainButton");
-            //Debug.Log(_main_buttons.Length);
-            foreach (GameObject _item in _main_buttons)
-            {
-                _item.SetActive(true);
-            }
-
-
+            _game_title.gameObject.SetActive(true);
+            _credits_button.gameObject.SetActive(true);
+            _commands_button.gameObject.SetActive(true);
+            _exit_button.gameObject.SetActive(true);
+            _play_button.gameObject.SetActive(true);
+            _game_title.gameObject.SetActive(true);
         }
         public void PlayButtonClick()
         {
