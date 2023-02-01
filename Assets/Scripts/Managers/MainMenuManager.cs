@@ -9,35 +9,62 @@ namespace Managers
     public class MainMenuManager : MonoBehaviour
     {
         public Image _black_screen;
-        public Canvas _commands_canvas;//andrea
-        public Canvas _credits_canvas;//
-        public Canvas _canvas; //
-        private string _showed_canvas; //
+        public Text _game_title;
+        public Text _commands_title;
+        public Text _credits_title;
+        public Button _back_button;
 
         private void Start()
         {
             StartCoroutine(HideBlackScreen());
-            _commands_canvas.gameObject.SetActive(false); //
-            _credits_canvas.gameObject.SetActive(false); //
         }
 
-        public void CommandsButtonClick() //
+        public void CommandsButtonClick()
         {
-            _canvas.gameObject.SetActive(false);
-            _commands_canvas.gameObject.SetActive(true);
+            GameObject[] _main_buttons = GameObject.FindGameObjectsWithTag("MainButton");
+            //Debug.Log(_main_buttons.Length);
+            foreach (GameObject _item in _main_buttons)
+            {
+                _item.SetActive(false);
+            }
+
+            _game_title.gameObject.SetActive(false);
+            _commands_title.gameObject.SetActive(true);
+            _back_button.gameObject.SetActive(true);
+
+
         }
 
-        public void CreditsButtonClick() //
+        public void CreditsButtonClick()
         {
-            _canvas.gameObject.SetActive(false);
-            _credits_canvas.gameObject.SetActive(true);
+            GameObject[] _main_buttons = GameObject.FindGameObjectsWithTag("MainButton");
+            //Debug.Log(_main_buttons.Length);
+            foreach (GameObject _item in _main_buttons)
+            {
+                _item.SetActive(false);
+            }
+
+            _game_title.gameObject.SetActive(false);
+            _credits_title.gameObject.SetActive(true);
+            _back_button.gameObject.SetActive(true);
         }
 
-        public void BackButtonClick() //
+        public void BackButtonClick()
         {
-            _canvas.gameObject.SetActive(true);
-            _commands_canvas.gameObject.SetActive(false);
-            _credits_canvas.gameObject.SetActive(false);
+            _game_title.gameObject.SetActive(true);
+            _commands_title.gameObject.SetActive(false);
+            _credits_title.gameObject.SetActive(false);
+            _back_button.gameObject.SetActive(false);
+
+
+            GameObject[] _main_buttons = GameObject.FindGameObjectsWithTag("MainButton");
+            //Debug.Log(_main_buttons.Length);
+            foreach (GameObject _item in _main_buttons)
+            {
+                _item.SetActive(true);
+            }
+
+
         }
         public void PlayButtonClick()
         {
