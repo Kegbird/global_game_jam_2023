@@ -12,6 +12,8 @@ TagManager:
   - Inventory
   - Door
   - DoorNode
+  - Zone
+  - Bunker
   layers:
   - Default
   - TransparentFX

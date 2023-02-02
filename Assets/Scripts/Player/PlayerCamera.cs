@@ -16,6 +16,11 @@ public class PlayerCamera : MonoBehaviour
     private void Start()
     {
         _player_transform = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG).transform;
+        SnapCameraOnPlayer();
+    }
+
+    public void SnapCameraOnPlayer()
+    {
         transform.position = _player_transform.position + _camera_offset;
     }
 

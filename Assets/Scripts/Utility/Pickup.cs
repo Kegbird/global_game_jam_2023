@@ -2,6 +2,7 @@ using Managers;
 using ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Accessibility;
 using Utility;
@@ -14,14 +15,22 @@ public class Pickup : MonoBehaviour
     private DialogueScriptableObject _dialogue;
     [SerializeField]
     private PickupScriptableObject _pickup;
+    [SerializeField]
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     public void ShowPopUp()
     {
-
+        _animator.SetBool("show", true);
     }
 
     public void Interact()
     {
+        _animator.SetBool("show", false);
         IEnumerator InteractCoroutine()
         {
             CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
@@ -37,10 +46,10 @@ public class Pickup : MonoBehaviour
 
     public void HidePopUp()
     {
-
+        _animator.SetBool("show", false);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
             ShowPopUp();

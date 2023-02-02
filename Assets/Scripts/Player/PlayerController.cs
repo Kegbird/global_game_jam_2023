@@ -15,10 +15,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool _active;
     [SerializeField]
-    private float _weight;
-    [SerializeField]
-    private bool _bunker;
-    [SerializeField]
     private GameObject _near_object;
     [SerializeField]
     private Animator _animator;
@@ -26,11 +22,18 @@ public class PlayerController : MonoBehaviour
     private AnimatorController _bunker_animator_controller;
     [SerializeField]
     private AnimatorController _outside_animator_controller;
+    [SerializeField]
+    private AudioClip _outside_footstep_sound_fx;
+    [SerializeField]
+    private AudioClip _bunker_footstep_sound_fx;
+    [SerializeField]
+    private AudioSource _audio_source;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _audio_source = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -150,5 +153,17 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         _near_object = null;
+    }
+
+    public void PlayBunkerFootstepSoundFx()
+    {
+        _audio_source.clip = _bunker_footstep_sound_fx;
+        _audio_source.Play();
+    }
+
+    public void PlayOutsideFootstepSoundFx()
+    {
+        _audio_source.clip = _outside_footstep_sound_fx;
+        _audio_source.Play();
     }
 }

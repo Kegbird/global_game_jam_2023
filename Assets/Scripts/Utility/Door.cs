@@ -11,10 +11,17 @@ namespace Utility
         private bool to_outside;
         [SerializeField]
         private Transform _destination;
+        [SerializeField]
+        private Animator _animator;
+
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+        }
 
         public void ShowPopUp()
         {
-
+            _animator.SetBool("show", true);
         }
 
         public void Interact()
@@ -38,8 +45,11 @@ namespace Utility
 
             GameObject player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
             PlayerController player_controller = player.GetComponent<PlayerController>();
+            PlayerCamera player_camera = Camera.main.GetComponent<PlayerCamera>();
+
             player_controller.SetOutsideAnimatorController();
             player.transform.position = _destination.position;
+            player_camera.SnapCameraOnPlayer();
 
             yield return StartCoroutine(game_ui_manager.HideBlackScreen());
             player_controller.EnableMovement();
@@ -57,8 +67,11 @@ namespace Utility
 
             GameObject player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
             PlayerController player_controller = player.GetComponent<PlayerController>();
+            PlayerCamera player_camera = Camera.main.GetComponent<PlayerCamera>();
+
             player_controller.SetBunkerAnimatorController();
             player.transform.position = _destination.position;
+            player_camera.SnapCameraOnPlayer();
 
             yield return StartCoroutine(game_ui_manager.HideBlackScreen());
             player_controller.EnableMovement();
@@ -68,10 +81,10 @@ namespace Utility
 
         public void HidePopUp()
         {
-
+            _animator.SetBool("show", false);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.tag.Equals("Player"))
                 ShowPopUp();
