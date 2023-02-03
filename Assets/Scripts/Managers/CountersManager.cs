@@ -16,8 +16,6 @@ namespace Managers
         [SerializeField]
         private float _energy_level;
         [SerializeField]
-        private bool _game_over;
-        [SerializeField]
         private float _oxygen_decrement_step;
 
         private IEnumerator _oxygen_coroutine;
@@ -57,7 +55,6 @@ namespace Managers
                 _oxygen_level -= _oxygen_decrement_step;
             }
             while (_oxygen_level > 0);
-            _game_over = true;
 
             yield return StartCoroutine(GameOverAndDie());
         }
@@ -71,7 +68,6 @@ namespace Managers
                 _energy_level -= Constants.DEFAULT_ENERGY_DECREMENT_STEP;
             }
             while (_energy_level > 0);
-            _game_over = true;
 
             yield return StartCoroutine(GameOver());
         }
@@ -85,7 +81,6 @@ namespace Managers
                 _water_level -= Constants.DEFAULT_WATER_DECREMENT_STEP;
             }
             while (_water_level > 0);
-            _game_over = true;
 
             yield return StartCoroutine(GameOver());
         }
@@ -98,7 +93,7 @@ namespace Managers
 
             GameUIManager game_ui_manager = GameObject.Find(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
             yield return StartCoroutine(game_ui_manager.ShowBlackScreen());
-            SceneManager.LoadScene(Constants.BAD_ENDING_SCENE_INDEX);
+            SceneManager.LoadScene((int)SceneEnum.BAD_ENDING_SCENE);
         }
 
         private IEnumerator GameOver()
@@ -109,12 +104,22 @@ namespace Managers
 
             GameUIManager game_ui_manager = GameObject.Find(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
             yield return StartCoroutine(game_ui_manager.ShowBlackScreen());
-            SceneManager.LoadScene(Constants.BAD_ENDING_SCENE_INDEX);
+            SceneManager.LoadScene((int)SceneEnum.BAD_ENDING_SCENE);
         }
 
         public void IncreaseOxygenDecrementStep(float increment)
         {
             _oxygen_decrement_step += increment;
+        }
+
+        public void IncreaseWaterLevel()
+        {
+            _water_level += Constants.WATER_PICKUP_INCREMENT;
+        }
+
+        public void IncreaseEnergyLevel()
+        {
+            _energy_level += Constants.ENERGY_PICKUP_INCREMENT;
         }
     }
 }

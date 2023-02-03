@@ -116,6 +116,16 @@ public class PlayerController : MonoBehaviour
             DisableMovement();
             _near_object.GetComponent<Door>().Interact();
         }
+        else if (_near_object.tag.Equals(Tags.ENERGY_MACHINE_TAG) && Input.GetKeyDown(KeyCode.F))
+        {
+            DisableMovement();
+            _near_object.GetComponent<EnergyMachine>().Interact();
+        }
+        else if (_near_object.tag.Equals(Tags.WATER_MACHINE_TAG) && Input.GetKeyDown(KeyCode.F))
+        {
+            DisableMovement();
+            _near_object.GetComponent<WaterMachine>().Interact();
+        }
     }
 
     public void PlayInteractAnimation()

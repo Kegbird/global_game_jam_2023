@@ -15,5 +15,7 @@ namespace Utility
         public static string INVENTORY_TAG = "Inventory";
         public static string LOGIC_TAG = "Logic";
         public static string DOOR_TAG = "Door";
+        public static string ENERGY_MACHINE_TAG = "EnergyMachine";
+        public static string WATER_MACHINE_TAG = "WaterMachine";
     }
 }

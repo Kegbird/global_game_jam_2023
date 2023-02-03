@@ -121,7 +121,7 @@ MonoBehaviour:
   _near_object: {fileID: 0}
   _animator: {fileID: 0}
   _bunker_animator_controller: {fileID: 9100000, guid: f23292ffe35991e44ba910a0645b04d6, type: 2}
-  _outside_animator_controller: {fileID: 9100000, guid: 65c42706dd6b4104ab4c06c6ea086c30, type: 2}
+  _outside_animator_controller: {fileID: 9100000, guid: e01175fca0f7c4a479d6c18393555be9, type: 2}
   _outside_footstep_sound_fx: {fileID: 0}
   _bunker_footstep_sound_fx: {fileID: 0}
   _audio_source: {fileID: 0}

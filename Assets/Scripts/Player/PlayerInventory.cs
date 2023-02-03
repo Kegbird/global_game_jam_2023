@@ -7,14 +7,14 @@ using Utility;
 public class PlayerInventory : MonoBehaviour
 {
     [SerializeField]
-    private List<PickupScriptableObject> _inventory;
+    private PickupScriptableObject[] _inventory;
     [SerializeField]
     private GameObject _inventory_panel;
 
 
     private void Awake()
     {
-        _inventory = new List<PickupScriptableObject>();
+        _inventory = new PickupScriptableObject[Constants.INVENTORY_SLOTS];
     }
 
     private void Start()
@@ -24,14 +24,30 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddPickup(PickupScriptableObject pickup)
     {
-        _inventory.Add(pickup);
-        //todo fill inventory slot with sprite and name
+        for (int i = 0; i < Constants.INVENTORY_SLOTS; i++)
+        {
+            if (_inventory[i] == null)
+            {
+                _inventory[i] = pickup;
+                return;
+                //TODO Fill inventory slots
+            }
+        }
     }
 
-    private void RemovePickup(int index)
+    public void RemovePickup(int index)
     {
-        if (_inventory.Count <= index)
-            return;
-        _inventory.RemoveAt(index);
+        _inventory[index] = null;
+        //TODO Remove inventory
+    }
+
+    public int ContainsPickupOfType(PickupEnum pickup_type)
+    {
+        for (int i = 0; i < Constants.INVENTORY_SLOTS; i++)
+        {
+            if (_inventory[i] != null && _inventory[i]._type == pickup_type)
+                return i;
+        }
+        return -1;
     }
 }

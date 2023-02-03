@@ -40,12 +40,13 @@ namespace Utility
 
         private IEnumerator TeleportPlayerToWorld()
         {
-            GameUIManager game_ui_manager = GameObject.FindGameObjectWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
-            yield return StartCoroutine(game_ui_manager.ShowBlackScreen());
-
             GameObject player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
             PlayerController player_controller = player.GetComponent<PlayerController>();
             PlayerCamera player_camera = Camera.main.GetComponent<PlayerCamera>();
+            player_controller.PlayInteractAnimation();
+            GameUIManager game_ui_manager = GameObject.FindGameObjectWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
+            yield return StartCoroutine(game_ui_manager.ShowBlackScreen());
+
 
             player_controller.SetOutsideAnimatorController();
             player.transform.position = _destination.position;
@@ -62,12 +63,13 @@ namespace Utility
 
         private IEnumerator TeleportPlayerToBunker()
         {
-            GameUIManager game_ui_manager = GameObject.FindGameObjectWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
-            yield return StartCoroutine(game_ui_manager.ShowBlackScreen());
-
             GameObject player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
             PlayerController player_controller = player.GetComponent<PlayerController>();
             PlayerCamera player_camera = Camera.main.GetComponent<PlayerCamera>();
+            player_controller.PlayInteractAnimation();
+
+            GameUIManager game_ui_manager = GameObject.FindGameObjectWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
+            yield return StartCoroutine(game_ui_manager.ShowBlackScreen());
 
             player_controller.SetBunkerAnimatorController();
             player.transform.position = _destination.position;

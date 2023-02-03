@@ -33,16 +33,19 @@ public class Pickup : MonoBehaviour
         _animator.SetBool("show", false);
         IEnumerator InteractCoroutine()
         {
-            CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
-            DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
-            yield return StartCoroutine(_dialogue_manager.ReadDialogue(_dialogue));
             GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
             PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
             PlayerController _player_controller = player.GetComponent<PlayerController>();
+            CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
+            DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
+            yield return StartCoroutine(_dialogue_manager.ReadDialogue(_dialogue));
+            _player_controller.DisableMovement();
             _inventory.AddPickup(_pickup);
             _player_controller.PlayInteractAnimation();
             _counters_manager.IncreaseOxygenDecrementStep(_pickup._weight);
-            this.gameObject.SetActive(false);
+            yield return new WaitForSeconds(1f);
+            _player_controller.EnableMovement();
+            _animator.SetBool("show", true);
         }
         StartCoroutine(InteractCoroutine());
     }
