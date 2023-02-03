@@ -118,6 +118,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void PlayInteractAnimation()
+    {
+        _animator.SetBool("interact", true);
+    }
+
+    public void StopInteractAnimation()
+    {
+        _animator.SetBool("interact", false);
+    }
+
     public void SetBunkerAnimatorController()
     {
         _animator.runtimeAnimatorController = _bunker_animator_controller;

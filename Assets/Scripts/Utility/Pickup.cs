@@ -36,9 +36,12 @@ public class Pickup : MonoBehaviour
             CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
             DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
             yield return StartCoroutine(_dialogue_manager.ReadDialogue(_dialogue));
-            PlayerInventory _inventory = GameObject.FindWithTag(Tags.PLAYER_TAG).GetComponent<PlayerInventory>();
+            GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
+            PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
+            PlayerController _player_controller = player.GetComponent<PlayerController>();
             _inventory.AddPickup(_pickup);
-            _counters_manager.IncreaseDecrementStep(_pickup._weight);
+            _player_controller.PlayInteractAnimation();
+            _counters_manager.IncreaseOxygenDecrementStep(_pickup._weight);
             this.gameObject.SetActive(false);
         }
         StartCoroutine(InteractCoroutine());

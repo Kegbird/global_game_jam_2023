@@ -393,20 +393,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 875470795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6cb863d38a7b1946a61dcddc7c78c48, type: 3}
+  m_Script: {fileID: 11500000, guid: 565e9473c9e600f40a225e3bfd4b1851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _black_screen: {fileID: 1949427712}
-  _image: {fileID: 647860870}
-  _sentence_text: {fileID: 1016378015}
-  _sentences:
-  - Hello there
-  _images:
-  - {fileID: 21300000, guid: 934c12e77f07a5c4fb0e60c34f3fcfe4, type: 3}
-  _sentences_per_image: 01000000
-  _no_image_intro: 1
-  _letters_per_second: 6
+  _black_screen: {fileID: 0}
+  _image: {fileID: 0}
+  _sentence_text: {fileID: 0}
+  _sentences: []
+  _images: []
+  _sentences_per_image: 
+  _no_image_intro: 0
+  _letters_per_second: 0
   _audio_source: {fileID: 0}
+  _scene: 2
 --- !u!4 &875470797
 Transform:
   m_ObjectHideFlags: 0
