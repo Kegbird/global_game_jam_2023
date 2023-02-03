@@ -9,7 +9,16 @@ using UnityEngine.UI;
 using Utility;
 using Color = UnityEngine.Color;
 
-public class IntroSceneManager : MonoBehaviour
+public enum SceneEnum
+{
+    MAIN_MENU_SCENE,
+    INTRO_SCENE,
+    GAME_SCENE,
+    BAD_ENDING_SCENE,
+    GOOD_ENDING_SCENE
+}
+
+public class SlideShowManager : MonoBehaviour
 {
     [SerializeField]
     private Image _black_screen;
@@ -30,6 +39,8 @@ public class IntroSceneManager : MonoBehaviour
     private float _letters_per_second;
     [SerializeField]
     private AudioSource _audio_source;
+    [SerializeField]
+    public SceneEnum _scene;
 
     private void Awake()
     {
@@ -79,7 +90,7 @@ public class IntroSceneManager : MonoBehaviour
             }
         }
         yield return StartCoroutine(DecreaseVolume());
-        SceneManager.LoadScene(Constants.GAME_SCENE_INDEX);
+        SceneManager.LoadScene((int)_scene);
         yield return null;
     }
 
