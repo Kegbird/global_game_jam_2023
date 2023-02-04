@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using Utility;
 
@@ -19,9 +16,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator _animator;
     [SerializeField]
-    private AnimatorController _bunker_animator_controller;
+    private RuntimeAnimatorController _bunker_animator_controller;
     [SerializeField]
-    private AnimatorController _outside_animator_controller;
+    private RuntimeAnimatorController _outside_animator_controller;
     [SerializeField]
     private AudioClip _outside_footstep_sound_fx;
     [SerializeField]

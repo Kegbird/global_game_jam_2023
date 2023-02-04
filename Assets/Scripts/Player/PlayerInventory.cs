@@ -35,16 +35,17 @@ public class PlayerInventory : MonoBehaviour
         return false;
     }
 
-    public void AddPickup(PickupScriptableObject pickup)
+    public int AddPickup(PickupScriptableObject pickup)
     {
         for (int i = 0; i < Constants.INVENTORY_SLOTS; i++)
         {
             if (_inventory[i] == null)
             {
                 _inventory[i] = pickup;
-                return;
+                return i;
             }
         }
+        return -1;
     }
 
     public void RemovePickup(int index)

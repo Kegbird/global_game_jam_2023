@@ -44,9 +44,13 @@ public class WaterMachine : MonoBehaviour
         PlayerController _player_controller = player.GetComponent<PlayerController>();
         CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
         DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
+        GameUIManager _game_ui_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
+
         yield return StartCoroutine(_dialogue_manager.ReadDialogue(_positive_dialogue_feedback));
         _player_controller.DisableMovement();
         _inventory.RemovePickup(index);
+        _game_ui_manager.RemoveInventoryItem(index);
+
         _player_controller.PlayInteractAnimation();
         _counters_manager.IncreaseWaterLevel();
         yield return new WaitForSeconds(1f);
