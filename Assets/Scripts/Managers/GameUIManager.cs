@@ -8,6 +8,25 @@ public class GameUIManager : MonoBehaviour
     [SerializeField]
     private Image _black_screen;
 
+    public Image _oxygen_bar;
+    public Image _energy_bar;
+    public Image _water_bar;
+    
+    public void OxygenLevel(float _oxygen_perc)
+    {
+        _oxygen_bar.fillAmount = _oxygen_perc;
+    }
+
+    public void EnergyLevel(float _energy_perc)
+    {
+        _energy_bar.fillAmount = _energy_perc;
+    }
+
+    public void WaterLevel(float _water_perc)
+    {
+        _water_bar.fillAmount = _water_perc;
+    }
+
     private void Start()
     {
         StartCoroutine(HideBlackScreen());
