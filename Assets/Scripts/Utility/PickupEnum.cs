@@ -1,5 +1,7 @@
-﻿namespace Utility
-{
+﻿using UnityEngine;
+using UnityEditor;
+namespace Utility
+{   
     public enum PickupEnum
     {
         ENERGY,
@@ -26,6 +28,15 @@
         HELLFLOWER,
         GHIDORAH,
         SACRED_LIFE
+        
     }
     
+    public class PickupUtilities : MonoBehaviour {
+        public static GameObject getPrefabByPickupEnum(PickupEnum pickup_enum) {
+            string stringified_enum = pickup_enum.ToString();
+            GameObject plant_prefab = Resources.Load<GameObject>($"Plants/{stringified_enum}");
+            Debug.Log(plant_prefab);
+            return plant_prefab;
+        }
+    }
 }
