@@ -36,6 +36,7 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator ReadDialogue(DialogueScriptableObject dialogue)
     {
+        _dialogue_box.gameObject.SetActive(true);
         _reading = true;
         for (float i = 0; i <= 0.5f; i += Time.deltaTime)
         {
@@ -62,6 +63,7 @@ public class DialogueManager : MonoBehaviour
         _dialogue_text.text = "";
         _reading = false;
         _player.EnableMovement();
+        _dialogue_box.gameObject.SetActive(false);
     }
 
     private IEnumerator SetDialogueText(string sentence, float text_speed)

@@ -6,18 +6,22 @@ using Utility;
 
 public class IbridatorMachine : MonoBehaviour
 {
-    public PickupEnum? _seed_type_1;
+    public PickupScriptableObject pickupScriptableObject0;
 
-    public PickupEnum? _seed_type_2;
+    public PickupScriptableObject pickupScriptableObject1;
 
     public Image _seed_sprite_1;
 
     public Image _seed_sprite_2;
     public Sprite _seed_placeholder;
 
-    public GameObject _ibridate_btn;
+    public GameObject _ibridation_panel;
+
+    public Button _ibridate_btn;
 
     private HybridationManager hybridationManager;
+
+    public bool is_used;
 
     private void Start()
     {
@@ -26,17 +30,34 @@ public class IbridatorMachine : MonoBehaviour
 
     public void ShowIbridator()
     {
-
+        _ibridation_panel.SetActive(true);
     }
 
     public void HideIbridator()
     {
-
+        _ibridation_panel.SetActive(false);
+        GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
+        PlayerController _player_controller = player.GetComponent<PlayerController>();
+        _player_controller.EnableMovement();
     }
 
     public void StartIbridation()
     {
 
+    }
+
+    public void Interact()
+    {
+        if (is_used)
+            return;
+        is_used = true;
+        ShowIbridator();
+    }
+
+    private void Update()
+    {
+        if(is_used && Input.GetKeyDown(KeyCode.Escape))
+            HideIbridator();
     }
 
     public void SetSeedSprite1(Sprite sprite)
@@ -49,23 +70,24 @@ public class IbridatorMachine : MonoBehaviour
         _seed_sprite_2.sprite = sprite;
     }
 
-    public void SetSeedType1(PickupEnum _seed_type)
+    public void SetSeedType1(PickupScriptableObject pickupScriptable)
     {
-        _seed_type_1 = _seed_type;
-
-
+        pickupScriptableObject0 = pickupScriptable;
+        if(pickupScriptableObject1 != null && hybridationManager.GetHybridation(pickupScriptableObject0._type, pickupScriptableObject1._type)!=null)
+            _ibridate_btn.interactable = true;
     }
 
-    public void SetSeedType2(PickupEnum _seed_type)
+    public void SetSeedType2(PickupScriptableObject pickupScriptable)
     {
-        _seed_type_2 = _seed_type;
+        pickupScriptableObject1 = pickupScriptable;
+        if (pickupScriptableObject1 != null && hybridationManager.GetHybridation(pickupScriptableObject0._type, pickupScriptableObject1._type) != null)
+            _ibridate_btn.interactable = true;
     }
 
     public PickupEnum? Ibridate()
     {
-        PickupEnum? result = hybridationManager.GetHybridation((PickupEnum)_seed_type_1, (PickupEnum)_seed_type_2);
-        _seed_type_1 = null;
-        _seed_type_2 = null;
+        _ibridate_btn.interactable = false;
+        PickupEnum? result = hybridationManager.GetHybridation(pickupScriptableObject0._type , pickupScriptableObject1._type);
         _seed_sprite_1.sprite = _seed_placeholder;
         _seed_sprite_2.sprite = _seed_placeholder;
         return result;
