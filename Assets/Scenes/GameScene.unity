@@ -2457,6 +2457,10 @@ PrefabInstance:
       propertyPath: _no_space_dialogue
       value: 
       objectReference: {fileID: 11400000, guid: 85e3116469b33194b96330abdb0ce83c, type: 2}
+    - target: {fileID: 2658926542052461991, guid: a21673b2920860945b496be5895c7780, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e01175fca0f7c4a479d6c18393555be9, type: 2}
     - target: {fileID: 2658926542052461992, guid: a21673b2920860945b496be5895c7780, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2572,7 +2576,7 @@ SpriteRenderer:
   m_Size: {x: 96, y: 108.02637}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1768999178
