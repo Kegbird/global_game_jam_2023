@@ -12,17 +12,17 @@ public class GameUIManager : MonoBehaviour
     public Image _energy_bar;
     public Image _water_bar;
     
-    public void OxygenLevel(float _oxygen_perc)
+    public void SetOxygenLevel(float _oxygen_perc)
     {
         _oxygen_bar.fillAmount = _oxygen_perc;
     }
 
-    public void EnergyLevel(float _energy_perc)
+    public void SetEnergyLevel(float _energy_perc)
     {
         _energy_bar.fillAmount = _energy_perc;
     }
 
-    public void WaterLevel(float _water_perc)
+    public void SetWaterLevel(float _water_perc)
     {
         _water_bar.fillAmount = _water_perc;
     }

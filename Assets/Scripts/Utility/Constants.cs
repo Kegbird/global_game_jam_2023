@@ -23,7 +23,7 @@ namespace Utility
         public static float ENERGY_PICKUP_INCREMENT = 20f;
 
         public static float MAX_OXYGEN_LEVEL = 100;
-        public static float DEFAULT_OXYGEN_LEVEL = 100;
+        public static float DEFAULT_OXYGEN_LEVEL = 100 ;
         public static float DEFAULT_OXYGEN_DECREMENT_STEP = 0.5f;
         public static float OXYGEN_DECREMENT_DELAY = 1f;
     }
