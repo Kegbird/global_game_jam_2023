@@ -20,10 +20,6 @@ public class DialogueManager : MonoBehaviour
     private bool _reading;
     [SerializeField]
     private PlayerController _player;
-    [SerializeField]
-    private bool quest;
-    [SerializeField]
-    private int choice;
 
     private void Start()
     {
@@ -68,38 +64,6 @@ public class DialogueManager : MonoBehaviour
         _dialogue_text.text = "";
         _reading = false;
         _player.EnableMovement();
-    }
-
-    void Update()
-    {
-        if(quest)
-        {
-            if(Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                choice = 1;
-                quest = false;
-            }
-            else if(Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                choice = 2;
-                quest = false;
-            }
-            else if(Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                choice = 3;
-                quest = false;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                choice = 4;
-                quest = false;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha5))
-            {
-                choice = 5;
-                quest = false;
-            }
-        }
     }
 
     private IEnumerator SetDialogueText(string sentence, float text_speed)

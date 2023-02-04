@@ -52,6 +52,7 @@ public class Ground : MonoBehaviour
                 PlayerController _player_controller = player.GetComponent<PlayerController>();
                 if (_player_intenvory.IsSeedSelected())
                 {
+                    HidePopUp();
                     _player_controller.EnableMovement();
                     GetComponent<Collider2D>().enabled = false;
                     Vector3 position = transform.position;
@@ -65,6 +66,7 @@ public class Ground : MonoBehaviour
                 }
                 else
                 {
+                    ShowPopUp();
                     _player_controller.EnableMovement();
                 }
                 _player_intenvory.ResetCell();

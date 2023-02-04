@@ -18,6 +18,7 @@ TagManager:
   - WaterMachine
   - EnergyMachine
   - Ground
+  - Dex
   layers:
   - Default
   - TransparentFX

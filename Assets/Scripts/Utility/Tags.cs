@@ -18,5 +18,6 @@ namespace Utility
         public static string ENERGY_MACHINE_TAG = "EnergyMachine";
         public static string WATER_MACHINE_TAG = "WaterMachine";
         public static string GROUND_TAG = "Ground";
+        public static string DEX_TAG = "Dex";
     }
 }

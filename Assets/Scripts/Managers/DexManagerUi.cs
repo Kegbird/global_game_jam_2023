@@ -10,21 +10,16 @@ namespace Managers
     public class DexManagerUi : MonoBehaviour
     {
         [SerializeField]
-        private PickupScriptableObject  _test_seed;
-
-        [SerializeField]
-        private PickupScriptableObject  _seed1;
-        [SerializeField]
-        private PickupScriptableObject  _seed2;
-        [SerializeField]
-        private PickupScriptableObject  _seed3;
-        [SerializeField]
-        private PickupScriptableObject  _seed4;
-        [SerializeField]
-        private PickupScriptableObject  _seed5;
-
-        [SerializeField]
         private Image  _background_canvas;
+        [SerializeField]
+        private GameObject _index;
+        [SerializeField]
+        private GameObject _description;
+        [SerializeField]
+        private GameObject _info;
+        [SerializeField]
+        private GameObject _seed;
+
 
         [SerializeField]
         private TextMeshProUGUI  _index_counter;
@@ -39,9 +34,6 @@ namespace Managers
         private TextMeshProUGUI  _seed_description;
 
         [SerializeField]
-        private TextMeshProUGUI  _seed_usage_tip;
-
-        [SerializeField]
         private Image  _seed_dex_sprite;
 
         private List<PickupScriptableObject> _seeds;
@@ -49,73 +41,58 @@ namespace Managers
         HashSet<PickupEnum> _known_seeds;
 
         private int _current_index;
-      
 
-        
+        private bool displayed;
 
-        private void Awake() {
+        private void Start()
+        {
+            _known_seeds = new HashSet<PickupEnum>();
             _seeds = new List<PickupScriptableObject>();
-            _known_seeds =  new HashSet<PickupEnum>();
-            _current_index = 1;
-
-            //MOCK --
-            AddSeed(_seed1);
-            AddSeed(_seed2);
-            AddSeed(_seed3);
-            AddSeed(_seed4);
-            AddSeed(_seed5);
-            AddSeed(_seed5);
-            AddSeed(_seed5);
-            
-            if (_seeds.Count > 0) {
-                RefreshFocussedSeed();
-            }
-            //-- END MOCK
         }
 
-        private void Start() {
-            if (_seeds.Count > 0) DisplayDex();
-
-            Debug.Log("Known Seeds: " + _known_seeds.Count);
-            Debug.Log("Owned Seeds" + _seeds.Count);
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Tab) && !displayed && _known_seeds.Count>0)
+            {
+                displayed = true;
+                DisplayDex();
+            }
+            else if(Input.GetKeyDown(KeyCode.Escape) && displayed)
+            {
+                displayed = false;
+                HideDex();
+            }
         }
-
-        private void Update() {
-            if (_current_index < _known_seeds.Count - 1 && Input.GetKeyDown("up"))
-            {
-                _current_index += 1;
-                RefreshFocussedSeed();
-            }
-
-            if ( _current_index > 0 && Input.GetKeyDown("down"))
-            {
-                _current_index -= 1;
-                RefreshFocussedSeed();
-
-            }
-                
-            }
-
 
         public void DisplayDex()
         {
             _current_index = 0;
             RefreshFocussedSeed();
+            _background_canvas.gameObject.SetActive(true);
+            _index.gameObject.SetActive(true);
+            _description.gameObject.SetActive(true);
+            _info.gameObject.SetActive(true);
+            _seed.gameObject.SetActive(true);
         }
 
-        void HideDex()
+        public void HideDex()
         {
-
+            _background_canvas.gameObject.SetActive(false);
+            _index.gameObject.SetActive(false);
+            _description.gameObject.SetActive(false);
+            _info.gameObject.SetActive(false);
+            _seed.gameObject.SetActive(false);
         }
-
           
-        void AddSeed(PickupScriptableObject seed=null) {
-            if(! _known_seeds.Contains(seed._type)) {
-                _seeds.Add(seed ? seed : _test_seed);
+        public void AddSeed(PickupScriptableObject seed) {
+            if (seed._type == PickupEnum.WATER || seed._type == PickupEnum.ENERGY)
+                return;
+            if (_known_seeds.Contains(seed._type)) {
+                return;
             }
-            _known_seeds.Add(seed ? seed._type : _test_seed._type);
+            _seeds.Add(seed);
+            _known_seeds.Add(seed._type);
         }
-
 
         private void RefreshFocussedSeed() {
             _background_canvas.color = GetSeedTypeColor(_seeds[_current_index]);
@@ -160,7 +137,6 @@ namespace Managers
                 case PickupEnum.GHIDORAH: return new Color32(111,36,102, 230);
 
                 case PickupEnum.SACRED_LIFE: return new Color32(230,74,74, 230);
-                
             }
         }
     }
