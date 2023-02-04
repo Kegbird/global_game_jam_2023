@@ -3,31 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class HybridationManager : MonoBehaviour
+public class HybridationManager
 {
-    PickupScriptableObject _plant;
 
-    Dictionary<(Utility.PickupEnum, Utility.PickupEnum), Utility.PickupEnum> _herbarium2
-        = new Dictionary<(Utility.PickupEnum, Utility.PickupEnum), Utility.PickupEnum>();
+    Dictionary<(Utility.PickupEnum, Utility.PickupEnum), Utility.PickupEnum> _herbarium2;
 
-
-    [SerializeField]
-
-    public Utility.PickupEnum? GetHybridation(Utility.PickupEnum plantA, Utility.PickupEnum plantB)
+    public HybridationManager()
     {
-        if(_herbarium2.ContainsKey((plantA, plantB)))
-        {
-            return _herbarium2[(plantA, plantB)];
-        } else if (_herbarium2.ContainsKey((plantB, plantA)))
-        {
-            return _herbarium2[(plantB, plantA)];
-        }
-        
-        return null;
-    }
-
-    void Start()
-    {
+        _herbarium2 = new Dictionary<(Utility.PickupEnum, Utility.PickupEnum), Utility.PickupEnum>();
         _herbarium2.Add((Utility.PickupEnum.LAVANDULA_X, Utility.PickupEnum.SNOWHEAP), Utility.PickupEnum.WHITELION);
         _herbarium2.Add((Utility.PickupEnum.SNOWHEAP, Utility.PickupEnum.CUCURBITA_X), Utility.PickupEnum.GLACIPILA);
         _herbarium2.Add((Utility.PickupEnum.HAILTREE, Utility.PickupEnum.CORYLUS_X), Utility.PickupEnum.IRONGIANT);
@@ -40,11 +23,18 @@ public class HybridationManager : MonoBehaviour
         _herbarium2.Add((Utility.PickupEnum.LIBRA_DE_FOCUS, Utility.PickupEnum.LIFE_HERB), Utility.PickupEnum.HELLFLOWER);
         _herbarium2.Add((Utility.PickupEnum.GLACIPILA, Utility.PickupEnum.DRAGONBORN), Utility.PickupEnum.GHIDORAH);
         _herbarium2.Add((Utility.PickupEnum.HELLFLOWER, Utility.PickupEnum.GHIDORAH), Utility.PickupEnum.SACRED_LIFE);
-    }    
+    }
 
-    // Update is called once per frame
-    void Update()
+    public Utility.PickupEnum? GetHybridation(Utility.PickupEnum plantA, Utility.PickupEnum plantB)
     {
-
+        if(_herbarium2.ContainsKey((plantA, plantB)))
+        {
+            return _herbarium2[(plantA, plantB)];
+        } else if (_herbarium2.ContainsKey((plantB, plantA)))
+        {
+            return _herbarium2[(plantB, plantA)];
+        }
+        
+        return null;
     }
 }

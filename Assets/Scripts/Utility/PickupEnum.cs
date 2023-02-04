@@ -6,7 +6,6 @@ namespace Utility
     {
         ENERGY,
         WATER,
-        SEED,
         LAVANDULA_X,
         CUCURBITA_X,
         CORYLUS_X,

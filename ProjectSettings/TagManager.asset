@@ -19,6 +19,7 @@ TagManager:
   - EnergyMachine
   - Ground
   - Dex
+  - Ibridator
   layers:
   - Default
   - TransparentFX
@@ -35,7 +36,7 @@ TagManager:
   - EnergyPickup
   - EnergyMachine
   - Ground
-  - 
+  - Ibridator
   - 
   - 
   - 
