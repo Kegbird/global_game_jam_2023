@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
+  m_Name: Irongiant
+  m_EditorClassIdentifier: 
+  _name: IRONGIANT
+  _description: It's the result of the hybridization between the Corylus X and the
+    Hailtree. The Hybrid of these two trees is somehow made out of a material similar
+    to metal. It's extremely cold to the touch and its impenetrable bark could be
+    used as a new construction material. Further studies must be conducted.  With
+    the current technology it is NOT possible further hybridization.
+  _basic_infos: 
+  _sprite: {fileID: 0}
+  _dex_sprite: {fileID: 0}
+  _type: 14
+  _weight: 0

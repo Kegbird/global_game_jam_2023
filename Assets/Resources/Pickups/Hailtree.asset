@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
+  m_Name: Hailtree
+  m_EditorClassIdentifier: 
+  _name: HAILTREE
+  _description: Found in the Mountain Region on the New Earth, it strongly resembles
+    the ancient extinct pine. It's made of a material similar to ice, but it doesn't
+    melt and it's definitely alive. When the strong icy wind blow through its branches,
+    it whistles so loud that it can be heard from miles away. Around these trees
+    fine hail falls perpetually.  With the current technology it is possible to hybridize
+    this plant with some of the ones from the Old Earth.
+  _basic_infos: 
+  _sprite: {fileID: 0}
+  _dex_sprite: {fileID: 0}
+  _type: 7
+  _weight: 0
