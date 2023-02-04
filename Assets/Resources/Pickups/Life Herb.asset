@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
+  m_Name: Life Herb
+  m_EditorClassIdentifier: 
+  _name: LIFE HERB
+  _description: Its the result of the hybridization between the Lavandula X and the
+    Fere Moss. This purple herb, that resembles somehow the now extinct spider lily,
+    has extremely strong healing abilities, it doesn't need much water and it's really
+    resilient. It is hypothesized that it can never die.  With the current technology
+    it is possible further hybridization.
+  _basic_infos: 
+  _sprite: {fileID: 0}
+  _dex_sprite: {fileID: 0}
+  _type: 18
+  _weight: 0
