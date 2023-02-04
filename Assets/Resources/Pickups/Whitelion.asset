@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
-  m_Name: Energy_Pickup
+  m_Name: Whitelion
   m_EditorClassIdentifier: 
-  _name: Fuel
-  _description: 
+  _name: WHITELION
+  _description: It's the result of the hybridization between the Lavandula X and
+    the Snowheap. The flower is very short lived, it's composed of hundreds of tiny
+    seed, each seed set in a snowflake. The slightest breeze causes them to fly away. 
+    With the current technology it is NOT possible further hybridization.
   _basic_infos: 
-  _sprite: {fileID: 21300000, guid: af866743c08df23459e27fa6925b1a0a, type: 3}
+  _sprite: {fileID: 0}
   _dex_sprite: {fileID: 0}
-  _type: 0
+  _type: 12
   _weight: 0

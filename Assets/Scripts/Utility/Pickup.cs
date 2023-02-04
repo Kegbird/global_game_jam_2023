@@ -1,10 +1,7 @@
 using Managers;
 using ScriptableObjects;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Accessibility;
 using Utility;
 
 public class Pickup : MonoBehaviour
@@ -16,13 +13,10 @@ public class Pickup : MonoBehaviour
     [SerializeField]
     private PickupScriptableObject _pickup;
     [SerializeField]
-    private Animator _animator;
-    [SerializeField]
     private GameObject _popup;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -45,12 +39,14 @@ public class Pickup : MonoBehaviour
             PlayerController _player_controller = player.GetComponent<PlayerController>();
             CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
             DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
+            GameUIManager _game_ui_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
             
-            if(_inventory.CanAdd())
+            if (_inventory.CanAdd())
             {
                 yield return StartCoroutine(_dialogue_manager.ReadDialogue(_dialogue));
                 _player_controller.DisableMovement();
-                _inventory.AddPickup(_pickup);
+                int inventory_index = _inventory.AddPickup(_pickup);
+                _game_ui_manager.SetInventorySpriteAtIndex(inventory_index, _pickup._sprite);
                 _counters_manager.IncreaseOxygenDecrementStep(_pickup._weight);
                 _player_controller.PlayInteractAnimation();
                 yield return new WaitForSeconds(0.5f);

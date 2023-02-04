@@ -12,34 +12,25 @@ public class GameUIManager : MonoBehaviour
     public Image _energy_bar;
     public Image _water_bar;
 
+    public Sprite _blank_inventory_space;
+
     public Image[] _inventory_images = new Image[5];
-    public Sprite _sprite_test;
+
+    private void Start()
+    {
+        for (int i = 0; i < _inventory_images.Length; i++)
+            _inventory_images[i].sprite = _blank_inventory_space;
+        StartCoroutine(HideBlackScreen());
+    }
 
     public void SetInventorySpriteAtIndex(int _index, Sprite _pickup_sprite)
-    {   
-        Color _color = _inventory_images[_index].color;
-        _inventory_images[_index] = _inventory_images[_index].GetComponent<Image>();
-        _color = _inventory_images[_index].color;
-        _color.a = 0;
-        _inventory_images[_index].color = _color;
+    {
         _inventory_images[_index].sprite = _pickup_sprite;
-        _color.a = 1;
-        _inventory_images[_index].color = _color;
     }
 
-    public void RemoveInventoryItem(int _index, Sprite pickup_sprite)
+    public void RemoveInventoryItem(int _index)
     {
-        Color _color = _inventory_images[_index].color;
-        _color.a = 0;
-        _inventory_images[_index].color = _color;
-    }
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            SetInventorySpriteAtIndex(2, _sprite_test);
-        }
+        _inventory_images[_index].sprite = _blank_inventory_space;
     }
     
     public void SetOxygenLevel(float _oxygen_perc)
@@ -55,11 +46,6 @@ public class GameUIManager : MonoBehaviour
     public void SetWaterLevel(float _water_perc)
     {
         _water_bar.fillAmount = _water_perc;
-    }
-
-    private void Start()
-    {
-        StartCoroutine(HideBlackScreen());
     }
 
     public IEnumerator HideBlackScreen()
