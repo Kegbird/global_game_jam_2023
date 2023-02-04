@@ -69,4 +69,14 @@ public class GameUIManager : MonoBehaviour
         }
         _black_screen.raycastTarget = false;
     }
+
+    public void Highlight(int index)
+    {
+        _inventory_images[index].color = new Color(255, 0, 0);
+    }
+
+    public void UnHighlight(int index)
+    {
+        _inventory_images[index].color = new Color(255, 255, 255);
+    }
 }

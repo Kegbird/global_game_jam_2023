@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 492bba4b1d5c65143b5d32e78a880aa7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &6756322983162395796
@@ -229,9 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _dialogue: {fileID: 0}
-  _pickup: {fileID: 0}
-  _animator: {fileID: 0}
+  _dialogue: {fileID: 11400000, guid: 597939bc386c14947bd27ba7fb180fa3, type: 2}
+  _pickup: {fileID: 11400000, guid: 1832bfe5b88972e4a8ae4003743511f9, type: 2}
   _popup: {fileID: 4078067763330173266}
 --- !u!95 &7542656829656196449
 Animator:
@@ -243,7 +242,7 @@ Animator:
   m_GameObject: {fileID: 6756322983162395799}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4438ffec67a14c340aeb41e377f87966, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

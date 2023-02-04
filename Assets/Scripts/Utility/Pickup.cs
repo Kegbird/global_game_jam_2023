@@ -21,7 +21,6 @@ public class Pickup : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(_dialogue);
     }
 
     public void ShowPopUp()
