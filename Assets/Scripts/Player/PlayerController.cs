@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     private AudioClip _bunker_footstep_sound_fx;
     [SerializeField]
     private AudioSource _audio_source;
+    [SerializeField]
+    private GameObject _pop_up;
 
     private void Awake()
     {
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        _pop_up = transform.GetChild(0).gameObject;
         _active = true;
     }
 
@@ -169,11 +172,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _near_object = collision.gameObject;
+        if(collision.collider.tag.Equals(Tags.WATER_MACHINE_TAG) ||
+            collision.collider.tag.Equals(Tags.ENERGY_MACHINE_TAG) ||
+            collision.collider.tag.Equals(Tags.PICKUP_TAG) ||
+            collision.collider.tag.Equals(Tags.DOOR_TAG) ||
+            collision.collider.tag.Equals(Tags.READABLE_TAG) ||
+            collision.collider.tag.Equals(Tags.GROUND_TAG))
+        {
+            _pop_up.SetActive(true);
+            _near_object = collision.gameObject;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        _pop_up.SetActive(false);
         _near_object = null;
     }
 

@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
-  m_Name: Energy_Pickup
+  m_Script: {fileID: 11500000, guid: ff436cc2843748048bf8096eaabdbbb9, type: 3}
+  m_Name: PositiveDialogueEnergyMachine 1
   m_EditorClassIdentifier: 
-  _name: Energy
-  _description: 
-  _basic_infos: 
-  _sprite: {fileID: 21300000, guid: af866743c08df23459e27fa6925b1a0a, type: 3}
-  _dex_sprite: {fileID: 0}
-  _type: 0
-  _weight: 0
+  _lines:
+  - Added

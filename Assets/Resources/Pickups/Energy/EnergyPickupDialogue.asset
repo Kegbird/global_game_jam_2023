@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: EnergyPickupDialogue
   m_EditorClassIdentifier: 
   _lines:
-  - You picked Energy
+  - The tank has been refilled

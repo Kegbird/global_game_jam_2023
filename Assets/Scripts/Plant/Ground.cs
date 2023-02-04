@@ -9,8 +9,6 @@ using Utility;
 public class Ground : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _popup;
-    [SerializeField]
     private DialogueScriptableObject _positive_dialogue;
     [SerializeField]
     private DialogueScriptableObject _negative_dialogue;
@@ -20,14 +18,8 @@ public class Ground : MonoBehaviour
     private bool _planted;
 
 
-    public void ShowPopUp()
-    {
-        _popup.SetActive(true);
-    }
-
     public void Interact()
     {
-        HidePopUp();
         GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
         PlayerController _player_controller = player.GetComponent<PlayerController>();
         _player_controller.DisableMovement();
@@ -52,7 +44,6 @@ public class Ground : MonoBehaviour
                 PlayerController _player_controller = player.GetComponent<PlayerController>();
                 if (_player_intenvory.IsSeedSelected())
                 {
-                    HidePopUp();
                     _player_controller.EnableMovement();
                     GetComponent<Collider2D>().enabled = false;
                     Vector3 position = transform.position;
@@ -66,7 +57,6 @@ public class Ground : MonoBehaviour
                 }
                 else
                 {
-                    ShowPopUp();
                     _player_controller.EnableMovement();
                 }
                 _player_intenvory.ResetCell();
@@ -82,22 +72,5 @@ public class Ground : MonoBehaviour
             }
             _player_intenvory.HighlightCell();
         }
-    }
-
-    public void HidePopUp()
-    {
-        _popup.SetActive(false);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-            ShowPopUp();
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-            HidePopUp();
     }
 }

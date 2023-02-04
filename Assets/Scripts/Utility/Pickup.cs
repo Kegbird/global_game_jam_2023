@@ -12,25 +12,9 @@ public class Pickup : MonoBehaviour
     private DialogueScriptableObject _dialogue;
     [SerializeField]
     private PickupScriptableObject _pickup;
-    [SerializeField]
-    private GameObject _popup;
-
-    private void Awake()
-    {
-    }
-
-    private void Start()
-    {
-    }
-
-    public void ShowPopUp()
-    {
-        _popup.SetActive(true);
-    }
 
     public void Interact()
     {
-        HidePopUp();
         IEnumerator InteractCoroutine()
         {
             GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
@@ -57,25 +41,7 @@ public class Pickup : MonoBehaviour
                 yield return StartCoroutine(_dialogue_manager.ReadDialogue(_inventory._no_space_dialogue));
             }
             _player_controller.EnableMovement();
-            ShowPopUp();
         }
         StartCoroutine(InteractCoroutine());
-    }
-
-    public void HidePopUp()
-    {
-        _popup.SetActive(false);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-            ShowPopUp();
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-            HidePopUp();
     }
 }
