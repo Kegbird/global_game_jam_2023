@@ -1,25 +1,37 @@
 fileFormatVersion: 2
-guid: 438bdf431efdaab4eae3672bbbac0d24
+guid: ca1f8d3169cc6c94e990fbdd70b24851
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7792303745549210637
-    second: corsa casco_0
+      213: -7602139660648939398
+    second: morte_0
   - first:
-      213: 5830971043154138957
-    second: corsa casco_1
+      213: 7881328492995143134
+    second: morte_1
   - first:
-      213: 8952877546344617183
-    second: corsa casco_2
+      213: 6201574880120248170
+    second: morte_2
   - first:
-      213: -25727137771613851
-    second: corsa casco_3
+      213: 408986438656935765
+    second: morte_3
   - first:
-      213: 8566783616397824688
-    second: corsa casco_4
+      213: -7822077465242014518
+    second: morte_4
   - first:
-      213: -1232669128879515127
-    second: corsa casco_5
+      213: 4754679222228980767
+    second: morte_5
+  - first:
+      213: -2692372354130501404
+    second: morte_6
+  - first:
+      213: -7090142642559522717
+    second: morte_7
+  - first:
+      213: 3176709647109374566
+    second: morte_8
+  - first:
+      213: -3202368843902277502
+    second: morte_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -66,7 +78,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -86,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,7 +110,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +122,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,127 +133,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: corsa casco_0
+      name: morte_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d04186f98f2d32c60800000000000000
-      internalID: 7792303745549210637
+      spriteID: a708c1aa146cf7690800000000000000
+      internalID: -7602139660648939398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corsa casco_1
+      name: morte_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 292
         y: 0
-        width: 256
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d479aca1545cbe050800000000000000
-      internalID: 5830971043154138957
+      spriteID: ed5e32fd18a106d60800000000000000
+      internalID: 7881328492995143134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corsa casco_2
+      name: morte_2
       rect:
         serializedVersion: 2
-        x: 512
+        x: 584
         y: 0
-        width: 256
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd4117ba1b20f3c70800000000000000
-      internalID: 8952877546344617183
+      spriteID: a679d810f7b601650800000000000000
+      internalID: 6201574880120248170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corsa casco_3
+      name: morte_3
       rect:
         serializedVersion: 2
-        x: 768
+        x: 876
         y: 0
-        width: 256
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5611904fd4994aff0800000000000000
-      internalID: -25727137771613851
+      spriteID: 5574912cff20da500800000000000000
+      internalID: 408986438656935765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corsa casco_4
+      name: morte_4
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1168
         y: 0
-        width: 256
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b257037f4453e670800000000000000
-      internalID: 8566783616397824688
+      spriteID: acc69ae0df5627390800000000000000
+      internalID: -7822077465242014518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corsa casco_5
+      name: morte_5
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1460
         y: 0
-        width: 256
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90adb8f45fda4eee0800000000000000
-      internalID: -1232669128879515127
+      spriteID: f1493edaf830cf140800000000000000
+      internalID: 4754679222228980767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morte_6
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 0
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e028f4db95c2aad0800000000000000
+      internalID: -2692372354130501404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morte_7
+      rect:
+        serializedVersion: 2
+        x: 2044
+        y: 0
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368e36fe4d0ca9d90800000000000000
+      internalID: -7090142642559522717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morte_8
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 0
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662c286d790f51c20800000000000000
+      internalID: 3176709647109374566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morte_9
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 0
+        width: 292
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2882d6bd086ee83d0800000000000000
+      internalID: -3202368843902277502
       vertices: []
       indices: 
       edges: []

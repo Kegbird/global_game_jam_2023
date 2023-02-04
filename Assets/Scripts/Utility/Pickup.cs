@@ -27,14 +27,13 @@ public class Pickup : MonoBehaviour
 
             if (_inventory.CanAdd())
             {
+                _player_controller.PlayInteractAnimation();
                 yield return StartCoroutine(_dialogue_manager.ReadDialogue(_dialogue));
                 _player_controller.DisableMovement();
                 int inventory_index = _inventory.AddPickup(_pickup);
                 _dex_ui.AddSeed(_pickup);
                 _game_ui_manager.SetInventorySpriteAtIndex(inventory_index, _pickup._sprite);
                 _counters_manager.IncreaseOxygenDecrementStep(_pickup._weight);
-                _player_controller.PlayInteractAnimation();
-                yield return new WaitForSeconds(1f);
             }
             else
             {

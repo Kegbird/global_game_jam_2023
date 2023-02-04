@@ -161,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af866743c08df23459e27fa6925b1a0a, type: 3}
+  m_Sprite: {fileID: 7068185163458982779, guid: a685c8bac22c631478620e2ec62898c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   _outside_footstep_sound_fx: {fileID: 0}
   _bunker_footstep_sound_fx: {fileID: 0}
   _audio_source: {fileID: 0}
+  _pop_up: {fileID: 0}
 --- !u!50 &2658926542052461989
 Rigidbody2D:
   serializedVersion: 4
@@ -244,18 +245,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15222377, y: -0.13047755}
+  m_Offset: {x: 0, y: 1.19}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.5, y: 2.5}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 2.5, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3257025, y: 1.4561803}
+  m_Size: {x: 1.3257025, y: 2.04}
   m_EdgeRadius: 0
 --- !u!95 &2658926542052461991
 Animator:
