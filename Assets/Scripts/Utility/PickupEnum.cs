@@ -27,4 +27,5 @@
         GHIDORAH,
         SACRED_LIFE
     }
+    
 }

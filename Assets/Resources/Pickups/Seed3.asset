@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
   m_Name: Seed3
   m_EditorClassIdentifier: 
-  _name: asd
-  _description: Donec sed odio dui. Sed posuere consectetur est at lobortis. Nulla
-    vitae elit libero, a pharetra augue.
+  _name: Corlyus X
+  _description: Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+    Maecenas faucibus mollis interdum.
   _basic_infos: 
   _sprite: {fileID: 0}
-  _dex_sprite: {fileID: 0}
-  _type: 2
-  _seed_type: 2
+  _dex_sprite: {fileID: 21300000, guid: 3cc6dd22c301b4120976a5696259ecd3, type: 3}
+  _type: 5
   _weight: 0
