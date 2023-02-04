@@ -229,9 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _dialogue: {fileID: 0}
-  _pickup: {fileID: 0}
-  _popup: {fileID: 4078067763330173266}
+  _dialogue: {fileID: 11400000, guid: 9a46d45a6778e1a45931783663cccbdb, type: 2}
+  _pickup: {fileID: 11400000, guid: 40751e565aa099442be28f4c40a38256, type: 2}
 --- !u!95 &7542656829656196449
 Animator:
   serializedVersion: 3
