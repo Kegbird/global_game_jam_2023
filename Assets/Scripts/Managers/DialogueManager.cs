@@ -37,15 +37,13 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator ReadDialogue(DialogueScriptableObject dialogue)
     {
         _reading = true;
-        for (float i = 0; i <= 1f; i += Time.deltaTime)
+        for (float i = 0; i <= 0.5f; i += Time.deltaTime)
         {
-            _dialogue_box.color = new Color(0, 0, 0, i / 1f);
+            _dialogue_box.color = new Color(0, 0, 0, i / 0.5f);
             yield return new WaitForEndOfFrame();
         }
         _dialogue_text.color =  new Color(1, 1, 1, 1);
         float text_speed = 1f / _letters_per_second;
-
-        yield return new WaitForSeconds(1f);
 
         for(int i=0; i<dialogue._lines.Length; i++)
         {
@@ -55,10 +53,10 @@ public class DialogueManager : MonoBehaviour
             _next_line_key.gameObject.SetActive(false);
         }
 
-        for (float i = 1f; i >= 0; i -= Time.deltaTime)
+        for (float i = 0.5f; i >= 0; i -= Time.deltaTime)
         {
-            _dialogue_box.color = new Color(0, 0, 0, i / 1f);
-            _dialogue_text.color = new Color(1, 1, 1, i / 1f);
+            _dialogue_box.color = new Color(0, 0, 0, i / 0.5f);
+            _dialogue_text.color = new Color(1, 1, 1, i / 0.5f);
             yield return new WaitForEndOfFrame();
         }
         _dialogue_text.text = "";

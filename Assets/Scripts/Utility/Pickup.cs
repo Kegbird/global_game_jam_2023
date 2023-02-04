@@ -34,7 +34,7 @@ public class Pickup : MonoBehaviour
                 _game_ui_manager.SetInventorySpriteAtIndex(inventory_index, _pickup._sprite);
                 _counters_manager.IncreaseOxygenDecrementStep(_pickup._weight);
                 _player_controller.PlayInteractAnimation();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(1f);
             }
             else
             {

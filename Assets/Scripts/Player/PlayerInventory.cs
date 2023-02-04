@@ -50,6 +50,11 @@ public class PlayerInventory : MonoBehaviour
         return -1;
     }
 
+    public PickupScriptableObject GetPickupAtIndex(int index)
+    {
+        return _inventory[index];
+    }
+
     public void RemovePickup(int index)
     {
         _inventory[index] = null;
