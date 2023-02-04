@@ -1736,6 +1736,10 @@ PrefabInstance:
       propertyPath: _next_line_key
       value: 
       objectReference: {fileID: 1728282666}
+    - target: {fileID: 8764827212814826420, guid: 4caac7ac3beee354dadabf7ac2e84d83, type: 3}
+      propertyPath: _letters_per_second
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8764827212814826426, guid: 4caac7ac3beee354dadabf7ac2e84d83, type: 3}
       propertyPath: m_Name
       value: DialogueManager
@@ -2333,6 +2337,7 @@ MonoBehaviour:
   _water_level: 0
   _energy_level: 0
   _oxygen_decrement_step: 0
+  _game_ui_manager: {fileID: 0}
 --- !u!114 &1562901960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,6 +2402,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2658926542052461990, guid: a21673b2920860945b496be5895c7780, type: 3}
+      propertyPath: _no_space_dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 85e3116469b33194b96330abdb0ce83c, type: 2}
     - target: {fileID: 2658926542052461992, guid: a21673b2920860945b496be5895c7780, type: 3}
       propertyPath: m_RootOrder
       value: 7

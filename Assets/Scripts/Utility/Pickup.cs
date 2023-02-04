@@ -45,12 +45,20 @@ public class Pickup : MonoBehaviour
             PlayerController _player_controller = player.GetComponent<PlayerController>();
             CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
             DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
-            yield return StartCoroutine(_dialogue_manager.ReadDialogue(_dialogue));
-            _player_controller.DisableMovement();
-            _inventory.AddPickup(_pickup);
-            _player_controller.PlayInteractAnimation();
-            _counters_manager.IncreaseOxygenDecrementStep(_pickup._weight);
-            yield return new WaitForSeconds(1f);
+            
+            if(_inventory.CanAdd())
+            {
+                yield return StartCoroutine(_dialogue_manager.ReadDialogue(_dialogue));
+                _player_controller.DisableMovement();
+                _inventory.AddPickup(_pickup);
+                _counters_manager.IncreaseOxygenDecrementStep(_pickup._weight);
+                _player_controller.PlayInteractAnimation();
+                yield return new WaitForSeconds(0.5f);
+            }
+            else
+            {
+                yield return StartCoroutine(_dialogue_manager.ReadDialogue(_inventory._no_space_dialogue));
+            }
             _player_controller.EnableMovement();
             ShowPopUp();
         }

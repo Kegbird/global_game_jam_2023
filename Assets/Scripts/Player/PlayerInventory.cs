@@ -1,3 +1,5 @@
+using Managers;
+using ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +12,8 @@ public class PlayerInventory : MonoBehaviour
     private PickupScriptableObject[] _inventory;
     [SerializeField]
     private GameObject _inventory_panel;
+    [SerializeField]
+    public DialogueScriptableObject _no_space_dialogue;
 
 
     private void Awake()
@@ -21,6 +25,15 @@ public class PlayerInventory : MonoBehaviour
     {
         _inventory_panel = GameObject.FindGameObjectWithTag(Tags.INVENTORY_TAG);
     }
+    public bool CanAdd()
+    {
+        for (int i = 0; i < Constants.INVENTORY_SLOTS; i++)
+        {
+            if (_inventory[i] == null)
+                return true;
+        }
+        return false;
+    }
 
     public void AddPickup(PickupScriptableObject pickup)
     {
@@ -30,7 +43,6 @@ public class PlayerInventory : MonoBehaviour
             {
                 _inventory[i] = pickup;
                 return;
-                //TODO Fill inventory slots
             }
         }
     }
