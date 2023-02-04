@@ -123,6 +123,11 @@ public class PlayerController : MonoBehaviour
             DisableMovement();
             _near_object.GetComponent<WaterMachine>().Interact();
         }
+        else if (_near_object.tag.Equals(Tags.GROUND_TAG) && Input.GetKeyDown(KeyCode.F))
+        {
+            DisableMovement();
+            _near_object.GetComponent<Ground>().Interact();
+        }
     }
 
     public void PlayInteractAnimation()
