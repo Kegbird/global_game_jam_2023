@@ -17,20 +17,27 @@ public class Pickup : MonoBehaviour
     private PickupScriptableObject _pickup;
     [SerializeField]
     private Animator _animator;
+    [SerializeField]
+    private GameObject _popup;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        Debug.Log(_dialogue);
+    }
+
     public void ShowPopUp()
     {
-        _animator.SetBool("show", true);
+        _popup.SetActive(true);
     }
 
     public void Interact()
     {
-        _animator.SetBool("show", false);
+        HidePopUp();
         IEnumerator InteractCoroutine()
         {
             GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
@@ -45,14 +52,14 @@ public class Pickup : MonoBehaviour
             _counters_manager.IncreaseOxygenDecrementStep(_pickup._weight);
             yield return new WaitForSeconds(1f);
             _player_controller.EnableMovement();
-            _animator.SetBool("show", true);
+            ShowPopUp();
         }
         StartCoroutine(InteractCoroutine());
     }
 
     public void HidePopUp()
     {
-        _animator.SetBool("show", false);
+        _popup.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
