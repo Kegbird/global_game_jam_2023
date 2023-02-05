@@ -54,53 +54,22 @@ public class SlideShowManager : MonoBehaviour
 
     private IEnumerator IntroCoroutine()
     {
-        string sentence;
-        float text_speed = 1f / _letters_per_second;
         _audio_source.Play();
         yield return StartCoroutine(RaiseVolume());
 
-        if(_no_image_intro)
+  
+        int k = 0;
+        for (int i = 0; i < _images.Count; i++)
         {
-            _image.color = new Color(0, 0, 0, 1f);
+            _image.sprite = _images[i];
             yield return StartCoroutine(HideBlackScreen());
-            for (int i = 0; i < _sentences.Count; i++)
-            {
-                sentence = _sentences[i];
-                yield return StartCoroutine(SetSentenceText(sentence, text_speed));
-                yield return new WaitForSeconds(2f);
-            }
+            yield return new WaitForSeconds(2f);
             yield return StartCoroutine(ShowBlackScreen());
         }
-        else
-        {
-            int k = 0;
-            for (int i = 0; i < _images.Count; i++)
-            {
-                _image.sprite = _images[i];
-                yield return StartCoroutine(HideBlackScreen());
-                for (int j=0; j < _sentences_per_image[i]; j++)
-                {
-                    sentence = _sentences[k];
-                    yield return StartCoroutine(SetSentenceText(sentence, text_speed));
-                    yield return new WaitForSeconds(2f);
-                    k++;
-                }
-                yield return StartCoroutine(ShowBlackScreen());
-                _sentence_text.text = "";
-            }
-        }
+  
         yield return StartCoroutine(DecreaseVolume());
         SceneManager.LoadScene((int)_scene);
         yield return null;
-    }
-
-    private IEnumerator SetSentenceText(string sentence, float text_speed)
-    {
-        for (int k = 0; k <= sentence.Length; k++)
-        {
-            _sentence_text.SetText(sentence.Substring(0, k));
-            yield return new WaitForSeconds(text_speed);
-        }
     }
 
     private IEnumerator HideBlackScreen()
