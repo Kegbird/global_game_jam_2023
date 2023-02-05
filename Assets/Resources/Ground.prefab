@@ -46,8 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f1074120fedb64db824554401fb93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _positive_dialogue: {fileID: 0}
-  _negative_dialogue: {fileID: 0}
   _input: 0
   _planted: 0
 --- !u!50 &3605266009640595
@@ -84,7 +82,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.64}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!212 &3605266009640592

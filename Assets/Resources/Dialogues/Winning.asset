@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff436cc2843748048bf8096eaabdbbb9, type: 3}
-  m_Name: TestDialogue
+  m_Name: Winning
   m_EditorClassIdentifier: 
   _lines:
-  - asodkpsdpasodkpasokd
-  - apokdsopkdapsokd
-  - oaskdpoaskdpasokdpasok
+  - Wonderful

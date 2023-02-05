@@ -86,7 +86,7 @@ public class PlayerInventory : MonoBehaviour
         if (_inventory[index] == null)
             return false;
         PickupEnum pickupEnum = _inventory[index]._type;
-        if (pickupEnum == PickupEnum.ENERGY || pickupEnum == PickupEnum.WATER)
+        if (pickupEnum == PickupEnum.ENERGY || pickupEnum == PickupEnum.WATER || pickupEnum == PickupEnum.LAVANDULA_X || pickupEnum == PickupEnum.CORYLUS_X || pickupEnum == PickupEnum.CUCURBITA_X || pickupEnum == PickupEnum.SACRED_LIFE)
             return false;
         return true;
     }
