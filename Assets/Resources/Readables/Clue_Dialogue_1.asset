@@ -13,4 +13,14 @@ MonoBehaviour:
   m_Name: Clue_Dialogue_1
   m_EditorClassIdentifier: 
   _lines:
-  - A
+  - 'Being the only human left on this Earth have its pros and cons. To me, the advantages
+    outweigh the disadvantages. The silence brings to the concentration and the introspection
+    of the self.  Furthermore, I don''t have to deal with rotten minds. '
+  - 'The research work is going well, I can''t say the same about the amount of oxygen
+    on this planet.  I hoped it would get better, but that is not the case. The situation
+    seems even worse than the time the last little group of people left for Sorot.
+    I''m never going there, being a researcher has been the perfect excuse not to
+    go with those fools. '
+  - Anyway, I made some progress.  It seems that the combination Lavandula X and
+    Hailtree doesn't get any results.  On the other hand, the combination of Hailtree
+    and Corylus X may lead to something.

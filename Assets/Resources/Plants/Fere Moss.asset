@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
+  m_Name: Fere Moss
+  m_EditorClassIdentifier: 
+  _name: FERE MOSS
+  _description: Only found in the Desert Region of New Earth, it is really rare to
+    come by. When there are droughts in its habitat, it deploys the physiological
+    strategy of drying up and rolling inwards to form a ball (similarly to the ancient
+    resurrection plant). It can survive for a very long time and it is speculated
+    that the specimen we have today are a thousand years old (there are no noticeable
+    evolution changes).  With the current technology it is possible to hybridize
+    this plant with some of the ones from the Old Earth.
+  _basic_infos: 
+  _sprite: {fileID: 21300000, guid: 758754d51689dd941ad03eff323a7c8c, type: 3}
+  _dex_sprite: {fileID: 21300000, guid: 18c213f2fa160534caa9190b3618ff65, type: 3}
+  _type: 9
+  _weight: 0

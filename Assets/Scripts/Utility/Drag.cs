@@ -98,7 +98,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
 
     private void OnTriggerEnter2D(Collider2D target) {
-        if(target.tag == Tags.IBRYDATOR_TAG && target != this.transform.parent)
+        if(target.tag == Tags.IBRIDATOR_TAG && target != this.transform.parent)
             {
                 if(target.gameObject == _input_slot_1 &&  _input_slot_1.GetComponent<IbridatorInputManager>().is_empty)
                     {
@@ -123,7 +123,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     } 
 
     // private void OnTriggerExit2D(Collider2D target) {
-    //     if(target.tag == Tags.IBRYDATOR_TAG && target != this.transform.parent)
+    //     if(target.tag == Tags.I && target != this.transform.parent)
     //         {
     //             if(target.gameObject == _input_slot_1 && _has_been_placed && !_input_slot_1.GetComponent<IbridatorInputManager>().is_empty)
     //                 {

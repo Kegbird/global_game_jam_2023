@@ -13,4 +13,15 @@ MonoBehaviour:
   m_Name: Clue_Dialogue_3
   m_EditorClassIdentifier: 
   _lines:
-  - A
+  - Yesterday I took some time to walk around without thinking about something new
+    to discover. There are days I'd love to get rid of this spacesuit. I know it
+    would mean my death, but I ask myself, even for just a second, would it be worth
+    it? The sky today was really blue.
+  - It's rarely this color, I witnessed it only a few times. This brings me hope.
+    I remember when I was a kid, the sky was dark gray one day, another day it would
+    be light gray, to then be dark gray again. The environmental pollution was so
+    high that even in the highest mountain villages it was impossible to see a nice
+    sky. Now I can at least see a little blue.
+  - 'The walk I did yesterday seems to have worked, my mind is clearer today. It
+    may have been luck, but this morning I stumbled upon a valid combination: Medusa
+    Flytrap and Corylus X. Some progress are made.'
