@@ -10,9 +10,6 @@ public class IbridatorMachine : MonoBehaviour
 
     public PickupScriptableObject pickupScriptableObject1;
 
-    public Image _seed_sprite_1;
-
-    public Image _seed_sprite_2;
     public Sprite _seed_placeholder;
 
     public GameObject _ibridation_panel;
@@ -46,6 +43,8 @@ public class IbridatorMachine : MonoBehaviour
 
     public void HideIbridator()
     {
+        pickupScriptableObject0 = null;
+        pickupScriptableObject1 = null;
         GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
         PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
         _inventory.Refresh();
@@ -79,21 +78,16 @@ public class IbridatorMachine : MonoBehaviour
             HideIbridator();
     }
 
-    public void SetSeedSprite1(Sprite sprite)
+    public void SetPickup(PickupScriptableObject pickupScriptable)
     {
-        _seed_sprite_1.sprite = sprite;
-    }
-
-    public void SetSeedSprite2(Sprite sprite)
-    {
-        _seed_sprite_2.sprite = sprite;
-    }
-
-    public void SetSeedType1(PickupScriptableObject pickupScriptable)
-    {
-        pickupScriptableObject0 = pickupScriptable;
-        if(pickupScriptableObject1 != null && hybridationManager.GetHybridation(pickupScriptableObject0._type, pickupScriptableObject1._type)!=null)
-            _ibridate_btn.interactable = true;
+        if (pickupScriptableObject0 == null)
+            pickupScriptableObject0 = pickupScriptable;
+        else
+        {
+            pickupScriptableObject1 = pickupScriptable;
+            if (hybridationManager.GetHybridation(pickupScriptableObject0._type, pickupScriptableObject1._type) != null)
+                _ibridate_btn.interactable = true;
+        }
     }
 
     public void SetSeedType2(PickupScriptableObject pickupScriptable)
@@ -107,8 +101,6 @@ public class IbridatorMachine : MonoBehaviour
     {
         _ibridate_btn.interactable = false;
         PickupEnum? result = hybridationManager.GetHybridation(pickupScriptableObject0._type , pickupScriptableObject1._type);
-        _seed_sprite_1.sprite = _seed_placeholder;
-        _seed_sprite_2.sprite = _seed_placeholder;
         return result;
     }
 }

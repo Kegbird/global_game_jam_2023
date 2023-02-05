@@ -9,10 +9,6 @@ using Utility;
 public class Ground : MonoBehaviour
 {
     [SerializeField]
-    private DialogueScriptableObject _positive_dialogue;
-    [SerializeField]
-    private DialogueScriptableObject _negative_dialogue;
-    [SerializeField]
     private bool _input;
     [SerializeField]
     private bool _planted;

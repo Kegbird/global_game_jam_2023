@@ -32,21 +32,8 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     private string _state;
 
-    public void DragHandler(BaseEventData data) {
-        // PointerEventData pointerData = (PointerEventData)data;
-        // Vector2 position;
-        // RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        //     (RectTransform)canvas.transform,
-        //     pointerData.position,
-        //     canvas.worldCamera,
-        //     out position);
-        
-        // string parent_name = this.gameObject.transform.parent.name;
-        // string resultString = Regex.Match(parent_name, @"\d+").Value;
-        // if(_inventory.GetPickupAtIndex(Convert.ToInt32(resultString)) != null) {
-        //     transform.position = canvas.transform.TransformPoint(position);
-        // }
-    }
+    [SerializeField]
+    private IbridatorMachine _ibridator_machine;
 
     private void Awake() {
         _player = GameObject.FindWithTag(Tags.PLAYER_TAG);
@@ -73,7 +60,9 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         string parent_name = this.gameObject.transform.parent.name;
         string resultString = Regex.Match(parent_name, @"\d+").Value;
-        if (data.dragging && _inventory.GetPickupAtIndex(Convert.ToInt32(resultString)) != null)
+        PickupScriptableObject pso = _inventory.GetPickupAtIndex(Convert.ToInt32(resultString));
+
+        if (data.dragging && pso != null && pso._type != PickupEnum.ENERGY && pso._type != PickupEnum.WATER)
         {
             _state = "Dragging " + this.transform.name;
             if (_has_been_removed) {
@@ -82,10 +71,10 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             if (_has_been_placed && !_has_been_removed) {
                 data.pointerDrag = (null);
                 _state = "Snapped " + this.transform.name;
+                _ibridator_machine.SetPickup(pso);
             } else {
                 transform.position = data.position;
             }
-            
         } 
     }
 

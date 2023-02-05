@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 8b9524da3400ef54e90e900a973b1ead
+guid: 34abd140bb1b6534aa5869378a66f698
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6360205069050528970
-    second: porta bunker_0
-  - first:
-      213: -6624413297200703769
-    second: porta bunker_1
-  - first:
-      213: 2431756948182166299
-    second: porta bunker_2
-  - first:
-      213: 4711875846116421745
-    second: porta bunker_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,11 +41,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.23}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -113,91 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: porta bunker_0
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 7
-        width: 374
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac4456fffccf34850800000000000000
-      internalID: 6360205069050528970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: porta bunker_1
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 7
-        width: 374
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e65afe243b5114a0800000000000000
-      internalID: -6624413297200703769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: porta bunker_2
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 7
-        width: 374
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1b6c747f065fb120800000000000000
-      internalID: 2431756948182166299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: porta bunker_3
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 7
-        width: 374
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17033811e12f36140800000000000000
-      internalID: 4711875846116421745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
