@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NegativeDialogueWaterMachine
   m_EditorClassIdentifier: 
   _lines:
-  - No Water
+  - No water to add.

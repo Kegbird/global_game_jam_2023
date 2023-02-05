@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Clue_Dialogue_0
   m_EditorClassIdentifier: 
   _lines:
+  - "Lab Report #00 \u2013 Dr.Orion \u2013 Year 3023, January 23"
   - 'I started working on plant hybridization as another attempt to bring back our
-    planet to what it once was. Right now, all the plants that have evolved freely
-    on the New Earth cannot be useful to us humans, but the plants from the Old Earth
-    that we developed in our laboratory cannot sustain life in the New Earth soil. '
-  - But my theory can change that and make the New Earth hospitable for the people
-    again.
-  - 'With this new technology, it will be possible to hybridize the new Earth seeds
-    with the ones we hold in our laboratory: we will be able to combine two seeds
-    with the same binding properties.'
+    planet to what it once was. '
+  - 'Right now, all the plants that evolved freely on the New Earth cannot be useful
+    to us humans, but - at the same time - the plants from the Old Earth that we
+    developed in our laboratory cannot sustain life in the New Earth soil. '
+  - 'But I think that my theory can change that and make the New Earth hospitable
+    for the people again. '
+  - Combining two seeds with the same binding properties with this new technology,
+    it will be possible to hybridise the new Earth seeds with the ones we hold in
+    our laboratory.

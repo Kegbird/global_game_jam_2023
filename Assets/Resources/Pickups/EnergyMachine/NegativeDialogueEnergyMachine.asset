@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NegativeDialogueEnergyMachine
   m_EditorClassIdentifier: 
   _lines:
-  - No Energy
+  - No bio fuel tanks to add.

@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Clue_Dialogue_3
   m_EditorClassIdentifier: 
   _lines:
-  - Yesterday I took some time to walk around without thinking about something new
-    to discover. There are days I'd love to get rid of this spacesuit. I know it
-    would mean my death, but I ask myself, even for just a second, would it be worth
-    it? The sky today was really blue.
+  - "Lab Report #03 \u2013 Dr.Orion \u2013 Year 3023, July 23"
   - It's rarely this color, I witnessed it only a few times. This brings me hope.
     I remember when I was a kid, the sky was dark gray one day, another day it would
     be light gray, to then be dark gray again. The environmental pollution was so

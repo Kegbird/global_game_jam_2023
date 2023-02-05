@@ -25,12 +25,13 @@ public class GameUIManager : MonoBehaviour
 
     public void SetInventorySpriteAtIndex(int _index, Sprite _pickup_sprite)
     {
+        _inventory_images[_index].color = new Color(1, 1, 1, 1);
         _inventory_images[_index].sprite = _pickup_sprite;
     }
 
     public void RemoveInventoryItem(int _index)
     {
-        _inventory_images[_index].sprite = _blank_inventory_space;
+        _inventory_images[_index].color = new Color(1, 1, 1, 0);
     }
     
     public void SetOxygenLevel(float _oxygen_perc)

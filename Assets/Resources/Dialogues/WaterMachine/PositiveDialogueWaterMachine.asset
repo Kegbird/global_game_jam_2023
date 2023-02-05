@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PositiveDialogueWaterMachine
   m_EditorClassIdentifier: 
   _lines:
-  - You added water
+  - Bottle used.
