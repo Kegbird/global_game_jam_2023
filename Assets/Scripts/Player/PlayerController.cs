@@ -136,6 +136,11 @@ public class PlayerController : MonoBehaviour
             DisableMovement();
             _near_object.GetComponent<IbridatorMachine>().Interact();
         }
+        else if (_near_object.tag.Equals(Tags.FINAL_POT_TAG) && Input.GetKeyDown(KeyCode.F))
+        {
+            DisableMovement();
+            _near_object.GetComponent<FinalPot>().Interact();
+        }
     }
 
     public void PlayInteractAnimation()
@@ -183,6 +188,7 @@ public class PlayerController : MonoBehaviour
             collision.collider.tag.Equals(Tags.DOOR_TAG) ||
             collision.collider.tag.Equals(Tags.READABLE_TAG) ||
             collision.collider.tag.Equals(Tags.GROUND_TAG) || 
+            collision.collider.tag.Equals(Tags.FINAL_POT_TAG) ||
             collision.collider.tag.Equals(Tags.IBRIDATOR_TAG))
         {
             _pop_up.SetActive(true);

@@ -57,6 +57,7 @@ namespace Managers
         private IEnumerator OxygenCounter()
         {
             _oxygen_level = Constants.DEFAULT_OXYGEN_LEVEL;
+            _oxygen_decrement_step = Constants.DEFAULT_OXYGEN_DECREMENT_STEP;
             do
             {
                 yield return new WaitForSeconds(Constants.OXYGEN_DECREMENT_DELAY);
@@ -97,7 +98,6 @@ namespace Managers
         
         private IEnumerator GameOverAndDie()
         {
-            StopAllCoroutines();
             GameObject player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
             player.GetComponent<PlayerController>().Die();
 
@@ -108,7 +108,6 @@ namespace Managers
 
         private IEnumerator GameOver()
         {
-            StopAllCoroutines();
             GameObject player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
             player.GetComponent<PlayerController>().DisableMovement();
 

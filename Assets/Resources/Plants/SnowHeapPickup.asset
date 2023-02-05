@@ -10,12 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
-  m_Name: SnowHeapPickup
+  m_Name: SnowheapPickup
   m_EditorClassIdentifier: 
-  _name: 
-  _description: 
+  _name: SNOWHEAP
+  _description: It is a shrub native to the New Earth, it can be found in the Mountain
+    Region. From what has been observed, it is harmless, not edible and has no apparent
+    medical use. It doesn't produce any flowers. The snow-like white pollen is really
+    sticky and completely covers the leaves, it can be spread simply by touching
+    the leaves and carrying it around.  With the current technology it is possible
+    to hybridize this plant with some of the ones from the Old Earth.
   _basic_infos: 
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: 21ad32f25d923df429d04c5f7f04023a, type: 3}
   _dex_sprite: {fileID: 21300000, guid: 691cf69cde80e0d4ab22e47b0e7f2cfb, type: 3}
-  _type: 6
+  _type: 5
   _weight: 0

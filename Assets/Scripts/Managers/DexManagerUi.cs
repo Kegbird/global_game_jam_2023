@@ -62,6 +62,19 @@ namespace Managers
                 displayed = false;
                 HideDex();
             }
+
+            if (_current_index < _known_seeds.Count - 1 && Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                _current_index += 1;
+                RefreshFocussedSeed();
+            }
+
+            if (_current_index > 0 && Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                _current_index -= 1;
+                RefreshFocussedSeed();
+
+            }
         }
 
         public void DisplayDex()

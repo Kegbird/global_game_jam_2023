@@ -20,6 +20,7 @@ TagManager:
   - Ground
   - Dex
   - Ibridator
+  - FinalPot
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - EnergyMachine
   - Ground
   - Ibridator
-  - 
+  - FinalPot
   - 
   - 
   - 

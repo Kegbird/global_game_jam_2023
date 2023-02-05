@@ -36,6 +36,7 @@ public class IbridatorMachine : MonoBehaviour
     public void HideIbridator()
     {
         _ibridation_panel.SetActive(false);
+        is_used = false;
         GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
         PlayerController _player_controller = player.GetComponent<PlayerController>();
         _player_controller.EnableMovement();

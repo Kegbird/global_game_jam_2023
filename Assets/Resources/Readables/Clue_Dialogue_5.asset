@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff436cc2843748048bf8096eaabdbbb9, type: 3}
+  m_Name: Clue_Dialogue_5
+  m_EditorClassIdentifier: 
+  _lines:
+  - I remembered something. The day I've been told that one way or another I would
+    have been sent to Sorot. At first I didn't say anything, but I felt an overwhelming
+    emptiness growing inside of me. This planet is everything to me.
+  - I've always been against to whom would have come to destroy it "for the good
+    of mankind". If I chose to become a researcher, it's because of this Earth. And
+    I don't want anything in common with the ones who think differently. They can
+    say I'm a madman, I don't care. Even if, by the way, those are the same people
+    that depend on me for the continuation of this project.
+  - Isn't that ironic. I'm seriously thinking about stopping the transmissions. Anyways,
+    I discovered the combination Lavandula X with Gehenna doesn't lead to anything.
+    But the Gehenna seems to work well with the Cucurbita X. I should keep researching
+    this.
