@@ -36,6 +36,7 @@ namespace Managers
             _game_title.gameObject.SetActive(false);
             _play_button.gameObject.SetActive(false);
 
+            _back_button.gameObject.SetActive(true);
             _commands_text.gameObject.SetActive(true);
             _commands_image.gameObject.SetActive(true);
             _back_button.gameObject.SetActive(true);
