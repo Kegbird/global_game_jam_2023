@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
+  m_Name: GlacipilaPickup
+  m_EditorClassIdentifier: 
+  _name: GLACPILA
+  _description: It's the result of the hybridization between the Snowheap and the
+    Cucurbita X. It's very similar to the Cucurbita X in shape and color patterns,
+    the differences are that this new plant is smaller, has white stripes and the
+    insides are composed of a jelly substance that, when melted, becomes drinkable
+    water.  With the current technology it is possible further hybridization.
+  _basic_infos: 
+  _sprite: {fileID: 21300000, guid: f8361d5cfd3063044a5f1502a10e5bf3, type: 3}
+  _dex_sprite: {fileID: 21300000, guid: 3d29fe0691ecb0b4493e0d05894ee959, type: 3}
+  _type: 12
+  _weight: 0
