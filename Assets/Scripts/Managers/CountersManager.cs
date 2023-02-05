@@ -54,6 +54,16 @@ namespace Managers
             StopCoroutine(_oxygen_coroutine);
         }
 
+        public void StopEnergyCounter()
+        {
+            StopCoroutine(_energy_coroutine);
+        }
+
+        public void StopWaterCounter()
+        {
+            StopCoroutine(WaterCounter());
+        }
+
         private IEnumerator OxygenCounter()
         {
             _oxygen_level = Constants.DEFAULT_OXYGEN_LEVEL;

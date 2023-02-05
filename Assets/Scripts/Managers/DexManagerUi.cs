@@ -134,17 +134,12 @@ namespace Managers
                 case PickupEnum.FERE_MOSS: return new Color32(218,176,115, 230);
                 case PickupEnum.GEHENNA: return new Color32(218,176,115, 230);
 
-                case PickupEnum.WHITELION: return new Color32(66,86,162, 230);
                 case PickupEnum.GLACIPILA: return new Color32(66,86,162, 230);
-                case PickupEnum.IRONGIANT: return new Color32(66,86,162, 230);
 
-                case PickupEnum.CATNIP_2_0: return new Color32(41,148,81, 230);
-                case PickupEnum.PITFALL_GOURD: return new Color32(41,148,81, 230);
                 case PickupEnum.DRAGONBORN: return new Color32(41,148,81, 230);
 
                 case PickupEnum.LIFE_HERB: return new Color32(113,81,36, 230);
                 case PickupEnum.LIBRA_DE_FOCUS: return new Color32(113,81,36, 230);
-                case PickupEnum.PYROPHITE: return new Color32(113,81,36, 230);
 
                 case PickupEnum.HELLFLOWER: return new Color32(111,36,102, 230);
                 case PickupEnum.GHIDORAH: return new Color32(111,36,102, 230);

@@ -14,7 +14,7 @@ public class FinalPot : MonoBehaviour
     [SerializeField]
     private bool _planted;
     [SerializeField]
-    private ScriptableObject _winning_dialogue;
+    private DialogueScriptableObject _winning_dialogue;
     [SerializeField]
     private DialogueScriptableObject _losing_dialogue;
 
@@ -97,14 +97,17 @@ public class FinalPot : MonoBehaviour
 
     private IEnumerator GameOver()
     {
+        CountersManager counters = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
+        counters.StopOxygenCounter();
+        counters.StopWaterCounter();
+        counters.StopOxygenCounter();
+        InstantiatePlant planter = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<InstantiatePlant>();
+        planter.spawnPlantByEnum(PickupEnum.SACRED_LIFE, transform.GetChild(0).transform.position);
+        _planted = true;
         DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
-        yield return StartCoroutine(_dialogue_manager.ReadDialogue(_losing_dialogue));
+        yield return StartCoroutine(_dialogue_manager.ReadDialogue(_winning_dialogue));
         GameObject player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
         player.GetComponent<PlayerController>().DisableMovement();
-        //InstantiatePlant planter = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<InstantiatePlant>();
-        //planter.spawnPlantByEnum(PickupEnum.SACRED_LIFE, transform.GetChild(0).transform.position);
-        _planted = true;
-
         GameUIManager game_ui_manager = GameObject.Find(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
         yield return StartCoroutine(game_ui_manager.ShowBlackScreen());
         SceneManager.LoadScene((int)SceneEnum.GOOD_ENDING_SCENE);

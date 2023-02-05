@@ -22,5 +22,5 @@ MonoBehaviour:
   _basic_infos: 
   _sprite: {fileID: 21300000, guid: f361b1c92c3f03e45abfd42ef38ff209, type: 3}
   _dex_sprite: {fileID: 21300000, guid: cecc196b624340347b23fa59a57bea6e, type: 3}
-  _type: 20
+  _type: 15
   _weight: 0

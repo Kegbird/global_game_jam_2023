@@ -44,6 +44,50 @@ public class IbridatorMachine : MonoBehaviour
         _ibridation_panel.SetActive(true);
     }
 
+    private int Index(PickupEnum pickup)
+    {
+        switch(pickup)
+        {
+            case PickupEnum.ENERGY:
+                return 0;
+            case PickupEnum.WATER:
+                return 1;
+            case PickupEnum.LAVANDULA_X:
+                return 2;
+            case PickupEnum.CUCURBITA_X:
+                return 3;
+            case PickupEnum.CORYLUS_X:
+                return 4;
+            case PickupEnum.SNOWHEAP:
+                return 5;
+            case PickupEnum.HAILTREE:
+                return 6;
+            case PickupEnum.MEDUSA_FLYTRAP:
+                return 7;
+            case PickupEnum.LION_FLOWER:
+                return 8;
+            case PickupEnum.FERE_MOSS:
+                return 9;
+            case PickupEnum.GEHENNA:
+                return 10;
+            case PickupEnum.GLACIPILA:
+                return 11;
+            case PickupEnum.DRAGONBORN:
+                return 12;
+            case PickupEnum.LIFE_HERB:
+                return 13;
+            case PickupEnum.LIBRA_DE_FOCUS:
+                return 14;
+            case PickupEnum.HELLFLOWER:
+                return 15;
+            case PickupEnum.GHIDORAH:
+                return 16;
+            default:
+                return 17;
+
+        }
+    }
+
     public void HideIbridator()
     {
         pickupScriptableObject0 = null;
@@ -68,8 +112,8 @@ public class IbridatorMachine : MonoBehaviour
         PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
         GameUIManager _game_ui_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
         PickupEnum? hibrid = hybridationManager.GetHybridation(pickupScriptableObject0._type, pickupScriptableObject1._type);
-        int index = _inventory.AddPickup(_pickups[(int)hibrid]);
-        _game_ui_manager.SetInventorySpriteAtIndex(index, _pickups[(int)hibrid]._dex_sprite);
+        int index = _inventory.AddPickup(_pickups[Index((PickupEnum)hibrid)]);
+        _game_ui_manager.SetInventorySpriteAtIndex(index, _pickups[Index((PickupEnum)hibrid)]._dex_sprite);
 
         index = _inventory.GetFirstOcc(pickupScriptableObject0);
         _inventory.RemovePickup(index);
