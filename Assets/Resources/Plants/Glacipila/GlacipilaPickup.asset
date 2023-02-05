@@ -20,6 +20,6 @@ MonoBehaviour:
     water.  With the current technology it is possible further hybridization.
   _basic_infos: 
   _sprite: {fileID: 21300000, guid: f8361d5cfd3063044a5f1502a10e5bf3, type: 3}
-  _dex_sprite: {fileID: 21300000, guid: 3d29fe0691ecb0b4493e0d05894ee959, type: 3}
+  _dex_sprite: {fileID: 21300000, guid: 38bbc1b9645ecac4fb9d4c6bd92c2889, type: 3}
   _type: 12
   _weight: 0
