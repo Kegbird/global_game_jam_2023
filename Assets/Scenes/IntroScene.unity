@@ -399,10 +399,11 @@ MonoBehaviour:
   _black_screen: {fileID: 0}
   _image: {fileID: 0}
   _sentence_text: {fileID: 0}
-  _sentences: []
+  _sentences:
+  - Wip
   _images: []
   _sentences_per_image: 
-  _no_image_intro: 0
+  _no_image_intro: 1
   _letters_per_second: 0
   _audio_source: {fileID: 0}
   _scene: 2
@@ -430,7 +431,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ea843af90042981479690f3fb34922ec, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
