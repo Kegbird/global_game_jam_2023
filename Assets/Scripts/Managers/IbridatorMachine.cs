@@ -21,6 +21,17 @@ public class IbridatorMachine : MonoBehaviour
 
     private HybridationManager hybridationManager;
 
+    [SerializeField]
+    private Drag _drag_0;
+    [SerializeField]
+    private Drag _drag_1;
+    [SerializeField]
+    private Drag _drag_2;
+    [SerializeField]
+    private Drag _drag_3;
+    [SerializeField]
+    private Drag _drag_4;
+
     public bool is_used;
 
     private void Start()
@@ -35,9 +46,16 @@ public class IbridatorMachine : MonoBehaviour
 
     public void HideIbridator()
     {
+        GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
+        PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
+        _inventory.Refresh();
+        _drag_0.ResetDrag();
+        _drag_1.ResetDrag();
+        _drag_2.ResetDrag();
+        _drag_3.ResetDrag();
+        _drag_4.ResetDrag();
         _ibridation_panel.SetActive(false);
         is_used = false;
-        GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
         PlayerController _player_controller = player.GetComponent<PlayerController>();
         _player_controller.EnableMovement();
     }

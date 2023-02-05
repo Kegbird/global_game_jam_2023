@@ -89,6 +89,14 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         } 
     }
 
+    public void ResetDrag()
+    {
+        _has_been_placed = false;
+        this.transform.position = _in_inventory_position;
+        _input_slot_1.GetComponent<IbridatorInputManager>().is_empty = true;
+        _input_slot_2.GetComponent<IbridatorInputManager>().is_empty = true;
+    }
+
     public void OnEndDrag(PointerEventData eventData)
     {
         if (!(_input_slot_1.GetComponent<IbridatorInputManager>().is_empty && _input_slot_2.GetComponent<IbridatorInputManager>().is_empty))

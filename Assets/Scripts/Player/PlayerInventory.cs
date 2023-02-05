@@ -55,6 +55,17 @@ public class PlayerInventory : MonoBehaviour
         return _inventory[index];
     }
 
+    public void Refresh()
+    {
+        GameUIManager _game_ui_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
+
+        for (int i=0; i<_inventory.Length; i++)
+        {
+            if (_inventory[i]!=null)
+                _game_ui_manager.SetInventorySpriteAtIndex(i, _inventory[i]._sprite);
+        }
+    }
+
     public void RemovePickup(int index)
     {
         _inventory[index] = null;
