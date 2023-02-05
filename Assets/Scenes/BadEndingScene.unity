@@ -396,15 +396,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565e9473c9e600f40a225e3bfd4b1851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _black_screen: {fileID: 0}
-  _image: {fileID: 0}
-  _sentence_text: {fileID: 0}
+  _black_screen: {fileID: 1949427712}
+  _image: {fileID: 647860870}
+  _sentence_text: {fileID: 1016378015}
   _sentences:
   - bad ending
   _images: []
   _sentences_per_image: 
-  _no_image_intro: 0
-  _letters_per_second: 0
+  _no_image_intro: 1
+  _letters_per_second: 10
   _audio_source: {fileID: 0}
   _scene: 0
 --- !u!4 &875470797
@@ -576,8 +576,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c92cefd32d4e2d844a6cf03ae1d4af60, type: 2}
+  m_sharedMaterial: {fileID: 2666629464554326440, guid: c92cefd32d4e2d844a6cf03ae1d4af60, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
