@@ -31,6 +31,9 @@ public class IbridatorMachine : MonoBehaviour
 
     public bool is_used;
 
+    [SerializeField]
+    public List<PickupScriptableObject> _pickups;
+
     private void Start()
     {
         hybridationManager = new HybridationManager();
@@ -61,7 +64,20 @@ public class IbridatorMachine : MonoBehaviour
 
     public void StartIbridation()
     {
+        GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
+        PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
+        GameUIManager _game_ui_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
+        PickupEnum? hibrid = hybridationManager.GetHybridation(pickupScriptableObject0._type, pickupScriptableObject1._type);
+        int index = _inventory.AddPickup(_pickups[(int)hibrid]);
+        _game_ui_manager.SetInventorySpriteAtIndex(index, _pickups[(int)hibrid]._dex_sprite);
 
+        index = _inventory.GetFirstOcc(pickupScriptableObject0);
+        _inventory.RemovePickup(index);
+        _game_ui_manager.RemoveInventoryItem(index);
+        index = _inventory.GetFirstOcc(pickupScriptableObject1);
+        _inventory.RemovePickup(index);
+        _game_ui_manager.RemoveInventoryItem(index);
+        HideIbridator();
     }
 
     public void Interact()

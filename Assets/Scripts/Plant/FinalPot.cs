@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 using Utility;
 
 public class FinalPot : MonoBehaviour
@@ -44,9 +45,12 @@ public class FinalPot : MonoBehaviour
                 _input = false;
 
                 PlayerController _player_controller = player.GetComponent<PlayerController>();
-                PickupEnum seed_type = _player_intenvory.GetSelectedSeed();
-
-                if (seed_type == PickupEnum.SACRED_LIFE)
+                PickupEnum? seed_type = _player_intenvory.GetSelectedSeed();
+                if(seed_type==null)
+                {
+                    _player_controller.EnableMovement();
+                }
+                else if (seed_type == PickupEnum.SACRED_LIFE)
                 {
                     _player_controller.PlayInteractAnimation();
                     StartCoroutine(GameOver());
@@ -93,8 +97,13 @@ public class FinalPot : MonoBehaviour
 
     private IEnumerator GameOver()
     {
+        DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
+        yield return StartCoroutine(_dialogue_manager.ReadDialogue(_losing_dialogue));
         GameObject player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
         player.GetComponent<PlayerController>().DisableMovement();
+        //InstantiatePlant planter = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<InstantiatePlant>();
+        //planter.spawnPlantByEnum(PickupEnum.SACRED_LIFE, transform.GetChild(0).transform.position);
+        _planted = true;
 
         GameUIManager game_ui_manager = GameObject.Find(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
         yield return StartCoroutine(game_ui_manager.ShowBlackScreen());
