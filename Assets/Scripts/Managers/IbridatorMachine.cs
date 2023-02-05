@@ -90,6 +90,7 @@ public class IbridatorMachine : MonoBehaviour
 
     public void HideIbridator()
     {
+        _ibridate_btn.interactable = false;
         pickupScriptableObject0 = null;
         pickupScriptableObject1 = null;
         GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
@@ -147,6 +148,8 @@ public class IbridatorMachine : MonoBehaviour
             pickupScriptableObject1 = pickupScriptable;
             if (hybridationManager.GetHybridation(pickupScriptableObject0._type, pickupScriptableObject1._type) != null)
                 _ibridate_btn.interactable = true;
+            else
+                HideIbridator();
         }
     }
 
@@ -155,6 +158,7 @@ public class IbridatorMachine : MonoBehaviour
         pickupScriptableObject1 = pickupScriptable;
         if (pickupScriptableObject1 != null && hybridationManager.GetHybridation(pickupScriptableObject0._type, pickupScriptableObject1._type) != null)
             _ibridate_btn.interactable = true;
+
     }
 
     public PickupEnum? Ibridate()
