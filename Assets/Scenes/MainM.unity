@@ -1562,7 +1562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &727510147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1739,6 +1739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _black_screen: {fileID: 727510148}
+  _credits_image: {fileID: 662134729}
   _game_title: {fileID: 539100131}
   _commands_text: {fileID: 1344829588}
   _credits_text: {fileID: 1872174211}
