@@ -13,15 +13,30 @@ MonoBehaviour:
   m_Name: Clue_Dialogue_5
   m_EditorClassIdentifier: 
   _lines:
-  - I remembered something. The day I've been told that one way or another I would
-    have been sent to Sorot. At first I didn't say anything, but I felt an overwhelming
-    emptiness growing inside of me. This planet is everything to me.
-  - I've always been against to whom would have come to destroy it "for the good
-    of mankind". If I chose to become a researcher, it's because of this Earth. And
-    I don't want anything in common with the ones who think differently. They can
-    say I'm a madman, I don't care. Even if, by the way, those are the same people
-    that depend on me for the continuation of this project.
+  - "Lab Report #05 \u2013 Dr.Orion \u2013 Year 3023, December 23"
+  - 'Update on the latest discovery: stay away from Pyrophite. '
   - Isn't that ironic. I'm seriously thinking about stopping the transmissions. Anyways,
     I discovered the combination Lavandula X with Gehenna doesn't lead to anything.
     But the Gehenna seems to work well with the Cucurbita X. I should keep researching
     this.
+  - Isn't that ironic. I'm seriously thinking about stopping the transmissions. Anyways,
+    I discovered the combination Lavandula X with Gehenna doesn't lead to anything.
+    But the Gehenna seems to work well with the Cucurbita X. I should keep researching
+    this.
+  - I'm thinking about leaving. I don't know if I will die or if there is going to
+    be anything beside this piece of land that I have accurately inspected  for an
+    entire year.
+  - In December 3022 even my last research colleague left. He asked me to go with
+    him but I refused. At this point I think that I made the right choice. There
+    were only a few of us left here before, but at least someone was there.
+  - ' I wasn''t used to the total absence of humans around me, but it made me realise
+    something though: I understood how I actually think and - just because of that
+    - I will leave. I will lose myself like never before.  '
+  - 'I don''t know if somebody will read these messages, but if someone will find
+    these scattered thoughts, I want them to actually understand the true meaning
+    of this planet. I would like them to know its value. This is enough for me.  '
+  - ' I wasn''t used to the total absence of humans around me, but it made me realise
+    something though: I understood how I actually think and - just because of that
+    - I will leave. I will lose myself like never before.  '
+  - ...
+  - 'Please, despite it all, take good care of this little planet, whoever you are. '

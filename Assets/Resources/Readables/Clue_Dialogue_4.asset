@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: Clue_Dialogue_4
   m_EditorClassIdentifier: 
   _lines:
-  - I remembered something. The day I've been told that one way or another I would
-    have been sent to Sorot. At first I didn't say anything, but I felt an overwhelming
-    emptiness growing inside of me. This planet is everything to me.
-  - I've always been against to whom would have come to destroy it "for the good
-    of mankind". If I chose to become a researcher, it's because of this Earth. And
-    I don't want anything in common with the ones who think differently. They can
-    say I'm a madman, I don't care. Even if, by the way, those are the same people
-    that depend on me for the continuation of this project.
-  - Isn't that ironic. I'm seriously thinking about stopping the transmissions. Anyways,
-    I discovered the combination Lavandula X with Gehenna doesn't lead to anything.
-    But the Gehenna seems to work well with the Cucurbita X. I should keep researching
-    this.
+  - "Lab Report #04 \u2013 Dr.Orion \u2013 Year 3023, October 23"
+  - 'I didn''t think I could get it wrong again... I have to stop doing hybrids with
+    Pittfall Gourd. '
+  - 'I remembered something. The day I''ve been told that - one way or another -
+    I would have been sent to Sorot. At first I didn''t say anything, but I felt
+    an overwhelming emptiness growing inside of me. This planet is everything to
+    me. '
+  - 'I''ve always been against those who wanted to come and destroy it "for the good
+    of mankind". If I chose to become a researcher, it''s because of this Earth and
+    I don''t want to have anything in common with those who think differently. They
+    can say I''m a madman but I don''t care. Even if they are the same people that
+    depend on me for the continuation of this project. Isn''t that ironic. '
+  - I'm seriously thinking about stopping the transmissions.
