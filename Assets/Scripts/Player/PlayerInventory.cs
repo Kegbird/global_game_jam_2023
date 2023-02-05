@@ -50,6 +50,16 @@ public class PlayerInventory : MonoBehaviour
         return -1;
     }
 
+    public int GetFirstOcc(PickupScriptableObject pickupScriptable)
+    {
+        for (int i = 0; i < _inventory.Length; i++)
+        {
+            if (_inventory[i] != null && _inventory[i]._type == pickupScriptable._type)
+                return i;
+        }
+        return -1;
+    }
+
     public PickupScriptableObject GetPickupAtIndex(int index)
     {
         return _inventory[index];
@@ -91,8 +101,10 @@ public class PlayerInventory : MonoBehaviour
         return true;
     }
 
-    public PickupEnum GetSelectedSeed()
+    public PickupEnum? GetSelectedSeed()
     {
+        if (_inventory[index] == null)
+            return null;
         return _inventory[index]._type;
     }
 

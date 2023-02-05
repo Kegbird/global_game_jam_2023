@@ -45,7 +45,7 @@ public class Ground : MonoBehaviour
                     GetComponent<Collider2D>().enabled = false;
                     Vector3 position = transform.position;
                     position.y = position.y - 0.1f;
-                    PickupEnum seed_type = _player_intenvory.GetSelectedSeed();
+                    PickupEnum? seed_type = _player_intenvory.GetSelectedSeed();
                     int index = _player_intenvory.GetSelectedIndex();
                     PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
                     PickupScriptableObject pickup = _inventory.GetPickupAtIndex(index);
@@ -53,7 +53,7 @@ public class Ground : MonoBehaviour
                     _player_intenvory.RemovePickup(index);
                     _game_ui_manager.RemoveInventoryItem(index);
                     InstantiatePlant planter = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<InstantiatePlant>();
-                    planter.spawnPlantByEnum(seed_type, position);
+                    planter.spawnPlantByEnum((PickupEnum)seed_type, position);
                     _planted = true;
                 }
                 else
