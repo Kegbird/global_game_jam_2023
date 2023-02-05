@@ -121,6 +121,11 @@ namespace Managers
             _oxygen_decrement_step += increment;
         }
 
+        public void DecreaseOxygenDecrementStep(float decrement)
+        {
+            _oxygen_decrement_step -= decrement;
+        }
+
         public void IncreaseWaterLevel()
         {
             _water_level += Constants.WATER_PICKUP_INCREMENT;

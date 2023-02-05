@@ -42,6 +42,7 @@ public class Ground : MonoBehaviour
                 _input = false;
 
                 PlayerController _player_controller = player.GetComponent<PlayerController>();
+                CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
                 if (_player_intenvory.IsSeedSelected())
                 {
                     _player_controller.EnableMovement();
@@ -50,6 +51,9 @@ public class Ground : MonoBehaviour
                     position.y = position.y - 0.1f;
                     PickupEnum seed_type = _player_intenvory.GetSelectedSeed();
                     int index = _player_intenvory.GetSelectedIndex();
+                    PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
+                    PickupScriptableObject pickup = _inventory.GetPickupAtIndex(index);
+                    _counters_manager.DecreaseOxygenDecrementStep(pickup._weight);
                     _player_intenvory.RemovePickup(index);
                     _game_ui_manager.RemoveInventoryItem(index);
                     InstantiatePlant planter = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<InstantiatePlant>();

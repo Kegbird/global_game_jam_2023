@@ -8,22 +8,9 @@ using Utility;
 public class WaterMachine : MonoBehaviour
 {
     [SerializeField]
-    private Animator _animator;
-    [SerializeField]
     private DialogueScriptableObject _positive_dialogue_feedback;
     [SerializeField]
     private DialogueScriptableObject _negative_dialogue_feedback;
-
-    private void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }
-
-
-    public void ShowPopUp()
-    {
-        _animator.SetBool("show", true);
-    }
 
     public void Interact()
     {
@@ -40,51 +27,30 @@ public class WaterMachine : MonoBehaviour
     IEnumerator PositiveInteractCoroutine(int index)
     {
         GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
-        PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
         PlayerController _player_controller = player.GetComponent<PlayerController>();
+        _player_controller.PlayInteractAnimation();
+        PlayerInventory _inventory = player.GetComponent<PlayerInventory>();
         CountersManager _counters_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<CountersManager>();
         DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
         GameUIManager _game_ui_manager = GameObject.FindWithTag(Tags.LOGIC_TAG).GetComponent<GameUIManager>();
-
         yield return StartCoroutine(_dialogue_manager.ReadDialogue(_positive_dialogue_feedback));
+        PickupScriptableObject pickup = _inventory.GetPickupAtIndex(index);
         _player_controller.DisableMovement();
+        _counters_manager.DecreaseOxygenDecrementStep(pickup._weight);
         _inventory.RemovePickup(index);
         _game_ui_manager.RemoveInventoryItem(index);
-
-        _player_controller.PlayInteractAnimation();
         _counters_manager.IncreaseWaterLevel();
-        yield return new WaitForSeconds(1f);
         _player_controller.EnableMovement();
-        _animator.SetBool("show", true);
     }
 
     IEnumerator NegativeInteractCoroutine()
     {
         GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
         PlayerController _player_controller = player.GetComponent<PlayerController>();
+        _player_controller.PlayInteractAnimation();
         DialogueManager _dialogue_manager = GameObject.FindWithTag(Tags.DIALOGUE_MANAGER_TAG).GetComponent<DialogueManager>();
         yield return StartCoroutine(_dialogue_manager.ReadDialogue(_negative_dialogue_feedback));
         _player_controller.DisableMovement();
-        _player_controller.PlayInteractAnimation();
-        yield return new WaitForSeconds(1f);
         _player_controller.EnableMovement();
-        _animator.SetBool("show", true);
-    }
-
-    public void HidePopUp()
-    {
-        _animator.SetBool("show", false);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-            ShowPopUp();
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-            HidePopUp();
     }
 }
