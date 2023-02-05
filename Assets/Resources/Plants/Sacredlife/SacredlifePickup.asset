@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0b2f4afa499bd4db1316b6e95232e3, type: 3}
+  m_Name: SacredlifePickup
+  m_EditorClassIdentifier: 
+  _name: Sacred life
+  _description: 'Its the result of the hybridization between the Hellflower and the
+    Ghidorah. This is the ultimate life form: it can provide food, water and with
+    its flowers it can cure any disease. The trunk is now a fully fledged dragon
+    made of metal. The most incredible trait is that, hypothetically, it can live
+    on forever.  It can survive on the New Earth.  We achieved our goal.'
+  _basic_infos: 
+  _sprite: {fileID: 21300000, guid: f43154b379e3c9c42af5cb427e820ef4, type: 3}
+  _dex_sprite: {fileID: 21300000, guid: 638773f3be47bd742a646ab21e9d9fef, type: 3}
+  _type: 22
+  _weight: 0
